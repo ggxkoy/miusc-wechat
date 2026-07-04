@@ -1,0 +1,278 @@
+{
+  "version": "remotion-timeline-v1",
+  "fps": 30,
+  "resolution": {
+    "width": 1080,
+    "height": 1920
+  },
+  "audio": {
+    "file": "audio/song.wav",
+    "source_mp3": "audio/song_APPROVED.mp3",
+    "duration": 44.424,
+    "alignment_note": "初版时间轴按已选 Suno 全男声 C 的结构和静音检测粗对齐；节点8样片如有偏差再微调。"
+  },
+  "content_label": "剧情演绎 / 虚构聊天",
+  "hook": {
+    "contact_name": "王总",
+    "account_name": "AAA专业法律-王律",
+    "first_message_id": 1,
+    "duration": 1.35,
+    "camera": {
+      "zoom": 1.06,
+      "pan": "center"
+    }
+  },
+  "characters": {
+    "a": {
+      "name": "王律",
+      "side": "right",
+      "avatar": "input/avatar_a.png",
+      "bubble": "#95EC69"
+    },
+    "b": {
+      "name": "王总",
+      "side": "left",
+      "avatar": "input/avatar_b.png",
+      "bubble": "#FFFFFF"
+    }
+  },
+  "scenes": [
+    {
+      "scene": "scene_001",
+      "message_ids": [
+        1
+      ],
+      "start": 1.35,
+      "end": 4.65,
+      "subtitle": "王律，我这个案子稳赢",
+      "emoji": "😎",
+      "camera": {
+        "follow": "last_message",
+        "zoom": 1.12,
+        "pan": "up"
+      },
+      "entrance": "tilt_drop",
+      "beat": "opening_flag"
+    },
+    {
+      "scene": "scene_002",
+      "message_ids": [
+        1,
+        2
+      ],
+      "start": 4.65,
+      "end": 7.05,
+      "subtitle": "证据发我看看",
+      "emoji": null,
+      "camera": {
+        "follow": "last_message",
+        "zoom": 1.15,
+        "pan": "up"
+      },
+      "entrance": "tilt_drop"
+    },
+    {
+      "scene": "scene_003",
+      "message_ids": [
+        1,
+        2,
+        3
+      ],
+      "start": 7.05,
+      "end": 9.25,
+      "subtitle": "我有转账记录",
+      "emoji": "💸",
+      "camera": {
+        "follow": "last_message",
+        "zoom": 1.16,
+        "pan": "up"
+      },
+      "entrance": "tilt_drop"
+    },
+    {
+      "scene": "scene_004",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "start": 9.25,
+      "end": 15.2,
+      "subtitle": "全部发给我",
+      "emoji": "❗❗❗",
+      "camera": {
+        "follow": "last_message",
+        "zoom": 1.24,
+        "pan": "up"
+      },
+      "entrance": "tilt_drop",
+      "repeat_visual": {
+        "count": 3,
+        "interval": 0.58,
+        "scale_step": 0.055,
+        "rotation_sequence": [
+          -4,
+          3,
+          -2
+        ]
+      },
+      "beat": "commanding_repeat"
+    },
+    {
+      "scene": "scene_005",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "start": 15.2,
+      "end": 24.85,
+      "subtitle": "哦对了，我还有一段录音，还有聊天记录，还有一张借条我没跟你说……",
+      "emoji": "😳",
+      "camera": {
+        "follow": "last_message",
+        "zoom": 1.2,
+        "pan": "up"
+      },
+      "entrance": "tilt_drop",
+      "beat": "confession_build"
+    },
+    {
+      "scene": "scene_006",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "start": 24.85,
+      "end": 31.7,
+      "subtitle": "你刚才一句不提？",
+      "emoji": "？？？",
+      "camera": {
+        "follow": "last_message",
+        "zoom": 1.3,
+        "pan": "up"
+      },
+      "entrance": "tilt_drop",
+      "repeat_visual": {
+        "count": 3,
+        "interval": 0.5,
+        "scale_step": 0.07,
+        "rotation_sequence": [
+          5,
+          -5,
+          3
+        ]
+      },
+      "beat": "lawyer_breakdown"
+    },
+    {
+      "scene": "scene_007",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "start": 31.7,
+      "end": 36.1,
+      "subtitle": "我怕你嫌麻烦",
+      "emoji": "🥺",
+      "camera": {
+        "follow": "last_message",
+        "zoom": 1.22,
+        "pan": "up"
+      },
+      "entrance": "tilt_drop",
+      "beat": "absurd_excuse"
+    },
+    {
+      "scene": "scene_008",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "start": 36.1,
+      "end": 43.3,
+      "subtitle": "对方已将你加入黑名单",
+      "emoji": null,
+      "camera": {
+        "follow": "last_message",
+        "zoom": 1.34,
+        "pan": "up"
+      },
+      "entrance": "system_stamp",
+      "beat": "blacklist_hit",
+      "hold_last": 1.2
+    }
+  ],
+  "memes": [
+    {
+      "file": "stickers/command_explosion.png",
+      "start": 10.1,
+      "end": 10.75,
+      "rotation": -7,
+      "scale": 0.92,
+      "anchor": "center"
+    },
+    {
+      "file": "stickers/command_explosion.png",
+      "start": 12.05,
+      "end": 12.62,
+      "rotation": 6,
+      "scale": 0.96,
+      "anchor": "center"
+    },
+    {
+      "file": "stickers/shock_evidence.png",
+      "start": 19.1,
+      "end": 19.9,
+      "rotation": -5,
+      "scale": 0.88,
+      "anchor": "center"
+    },
+    {
+      "file": "stickers/lawyer_angry.png",
+      "start": 25.55,
+      "end": 26.2,
+      "rotation": -8,
+      "scale": 0.95,
+      "anchor": "center"
+    },
+    {
+      "file": "stickers/lawyer_angry.png",
+      "start": 27.25,
+      "end": 27.88,
+      "rotation": 7,
+      "scale": 0.98,
+      "anchor": "center"
+    },
+    {
+      "file": "stickers/blacklist_stamp.png",
+      "start": 36.75,
+      "end": 38.1,
+      "rotation": -4,
+      "scale": 1.05,
+      "anchor": "center"
+    }
+  ],
+  "render_notes": {
+    "text_policy": "气泡正文使用 dialogue_APPROVED.json 原台词；emoji/标点强调作为 scene.emoji 或视觉复读追加，不改原始字幕。",
+    "next_step": "节点7 Remotion 组件需读取本 JSON，生成普通对话、长消息、核心笑点三张样图。"
+  }
+}

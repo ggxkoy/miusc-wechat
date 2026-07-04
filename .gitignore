@@ -1,0 +1,29 @@
+# Node
+node_modules/
+
+# OpenClaw internal
+.openclaw/
+
+# OS
+.DS_Store
+
+# Large binaries / temp
+bin/
+*.zip
+
+# Large media files (use Git LFS or external storage if needed)
+*.wav
+*.mp4
+
+# Logs
+clone.log
+*.log
+
+# Workspace screenshots
+desktop-snapshot.png
+
+# wx_channels_download (separate project)
+wx_channels_download/
+
+# wechat-dialog-generator (separate project)
+wechat-dialog-generator/

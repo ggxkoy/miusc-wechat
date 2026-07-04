@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="64" fill="#ff4d4f"/>
+<circle cx="256" cy="180" r="92" fill="rgba(255,255,255,0.22)"/>
+<text x="256" y="205" text-anchor="middle" font-size="96" font-family="Apple Color Emoji, sans-serif">💥</text>
+<text x="256" y="330" text-anchor="middle" font-size="56" font-weight="800" fill="white" font-family="PingFang SC, sans-serif"><tspan x="256" dy="0">全部
+发给我!!!</tspan></text>
+</svg>

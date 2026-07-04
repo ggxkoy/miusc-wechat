@@ -1,0 +1,93 @@
+{
+  "project": "wechat-music-video",
+  "workflow_version": "grouped-v2",
+  "stages": {
+    "A_准备": {
+      "nodes": "0-2",
+      "status": "APPROVED"
+    },
+    "B_音乐": {
+      "nodes": "3-5",
+      "status": "APPROVED"
+    },
+    "C_画面": {
+      "nodes": "6-8",
+      "status": "APPROVED"
+    },
+    "D_成片": {
+      "nodes": "9-11",
+      "status": "REVIEW"
+    }
+  },
+  "currentStage": "D_成片",
+  "paused": false,
+  "note": "逐句时间轴以阶段B生成的实际Suno音乐节奏为准，在阶段C(节点6)重做；阶段A节奏表仅粗略参考。",
+  "nodes": {
+    "0": {
+      "status": "APPROVED",
+      "artifact": "planning/project_APPROVED.yaml"
+    },
+    "1": {
+      "status": "APPROVED",
+      "artifact": "planning/dialogue_APPROVED.json"
+    },
+    "2": {
+      "status": "APPROVED",
+      "artifact": "planning/storyboard_APPROVED.md"
+    },
+    "3": {
+      "status": "APPROVED",
+      "artifact": "planning/lyrics_APPROVED.md"
+    },
+    "4": {
+      "status": "APPROVED",
+      "artifact": "planning/suno_prompt_APPROVED.md"
+    },
+    "5": {
+      "status": "APPROVED",
+      "artifact": "audio/song_APPROVED.mp3",
+      "selected": "candidate_c_male.mp3"
+    },
+    "6": {
+      "status": "APPROVED",
+      "artifact": [
+        "planning/timeline_APPROVED.json",
+        "subtitles/final.srt"
+      ]
+    },
+    "7": {
+      "status": "APPROVED",
+      "artifact": [
+        "chat/scene_001.png",
+        "chat/scene_002.png",
+        "chat/scene_003.png",
+        "remotion/src/index.ts",
+        "remotion/src/ChatVideo.tsx",
+        "remotion/src/ChatBubble.tsx",
+        "remotion/src/MemeOverlay.tsx",
+        "remotion/render-notes-node7.md"
+      ]
+    },
+    "8": {
+      "status": "APPROVED",
+      "artifact": [
+        "preview/preview_15s.mp4",
+        "preview/preview_15s_contact.jpg"
+      ],
+      "note": "用户要求后续可跳过15秒小样等待，直接出完整候选片。"
+    },
+    "9": {
+      "status": "APPROVED",
+      "artifact": "output/roughcut_v3.mp4"
+    },
+    "10": {
+      "status": "APPROVED",
+      "artifact": "output/roughcut_v3.mp4",
+      "note": "精修合并到粗剪v3中完成"
+    },
+    "11": {
+      "status": "REVIEW",
+      "artifact": "output/final.mp4"
+    }
+  }
+}

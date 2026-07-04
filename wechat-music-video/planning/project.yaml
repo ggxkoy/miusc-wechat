@@ -1,0 +1,23 @@
+title: 王总的稳赢案子
+resolution: 1080x1920
+fps: 30
+target_duration_seconds: 45
+language: zh-CN
+content_label: 剧情演绎 / 虚构聊天
+characters:
+  - id: a
+    name: AAA专业法律-王律
+    display_name: 王律
+    gender: female
+    side: right      # 律所账号视角，自己在右侧
+    avatar: input/avatar_a.png   # 女律师职业照
+  - id: b
+    name: 王总
+    display_name: 王总
+    gender: male
+    side: left
+    avatar: input/avatar_b.png   # 蓝底"王"字头像
+notes:
+  - 最后一行「系统提示：对方已将你加入黑名单」是系统提示，不是台词，居中灰字呈现，是核心笑点。
+  - 律师账号全名「AAA专业法律-王律」，聊天气泡中显示「王律」。
+  - 导入渲染器时首个出现的名字=自己(右侧)；对话首句是王总，故需在渲染器里手动把王律设为"自己"或调整顺序，确保王律在右。

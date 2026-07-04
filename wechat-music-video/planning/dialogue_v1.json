@@ -1,0 +1,17 @@
+{
+  "title": "王总的稳赢案子",
+  "characters": {
+    "a": {"name": "王律", "full_name": "AAA专业法律-王律", "side": "right", "gender": "female", "role": "律师"},
+    "b": {"name": "王总", "side": "left", "gender": "male", "role": "客户"}
+  },
+  "messages": [
+    { "id": 1, "speaker": "b", "text": "王律，我这个案子稳赢", "emotion": "自信", "importance": 2 },
+    { "id": 2, "speaker": "a", "text": "证据发我看看", "emotion": "冷静", "importance": 1 },
+    { "id": 3, "speaker": "b", "text": "我有转账记录", "emotion": "自信", "importance": 1 },
+    { "id": 4, "speaker": "a", "text": "全部发给我", "emotion": "干脆", "importance": 1 },
+    { "id": 5, "speaker": "b", "text": "哦对了，我还有一段录音，还有聊天记录，还有一张借条我没跟你说……", "emotion": "心虚补充", "importance": 3 },
+    { "id": 6, "speaker": "a", "text": "你刚才一句不提？", "emotion": "无语震惊", "importance": 3 },
+    { "id": 7, "speaker": "b", "text": "我怕你嫌麻烦", "emotion": "委屈", "importance": 2 },
+    { "id": 8, "type": "system", "text": "对方已将你加入黑名单", "emotion": "反转笑点", "importance": 3 }
+  ]
+}

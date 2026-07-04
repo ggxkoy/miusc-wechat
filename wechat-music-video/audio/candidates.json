@@ -1,0 +1,14 @@
+{
+  "candidate_a": {
+    "file": "audio/candidate_a.mp3",
+    "suno_id": "3f790637-c32a-4946-96f2-d82f9d9ea0b2",
+    "url": "https://suno.com/song/3f790637-c32a-4946-96f2-d82f9d9ea0b2",
+    "duration_seconds": 50.664
+  },
+  "candidate_b": {
+    "file": "audio/candidate_b.mp3",
+    "suno_id": "e0ae2b8d-ece1-4275-90cb-a98267b017fd",
+    "url": "https://suno.com/song/e0ae2b8d-ece1-4275-90cb-a98267b017fd",
+    "duration_seconds": 44.784
+  }
+}
