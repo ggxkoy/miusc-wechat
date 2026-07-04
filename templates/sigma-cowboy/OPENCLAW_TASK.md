@@ -24,9 +24,10 @@ templates/sigma-cowboy/ 制作一集视频。逐节点验收，每个节点完�
 == 输入 ==
 - 模板包：templates/sigma-cowboy/（breakdown.md 拆解、template.yaml
   参数、shotlist.md 拍摄清单、reference/cutlist.json 剪辑点数据）
-- 实拍素材：projects/<id>/input/footage/（A1~A6 标志镜头、B1~B4
-  本集叙事、C1~C2 热舞碎片、D1 氛围；缺失任何 A/C 组素材则列出
-  清单停止等待；B 组缺失时询问本集是否为"纯人设展示集"）
+- 实拍素材：projects/<id>/input/footage/（A1~A6 标志镜头、B0~B4
+  本集叙事（含 B0 预知画面）、C1~C2 热舞碎片、D1 氛围；缺失任何
+  A/C 组或 B0 素材则列出清单停止等待；B1~B4 缺失时询问本集是否
+  为"纯人设展示集"）
 - 音乐：参考视频原声（用户持有版权）。提取：
   ffmpeg -i templates/sigma-cowboy/reference/ref.mp4 -vn -c:a copy
   audio/song_APPROVED.m4a
@@ -34,7 +35,8 @@ templates/sigma-cowboy/ 制作一集视频。逐节点验收，每个节点完�
 
 == 节点 P0：项目初始化 ==
 核对素材完整性，ffprobe 登记规格，提取原声，确认本集叙事槽位
-（daily_scene/good_deed/cost/dance_style 写入 project.yaml），
+（daily_scene/foresight_visual/good_deed/helped_person/cost/
+dance_style 写入 project.yaml），
 母版渠道：抖音/TikTok，1080x1920@30fps。
 
 == 节点 P1：时间轴 ==
@@ -94,7 +96,7 @@ REVIEW。
 
 ## 说明（给用户，不发给代理）
 
-- 这是叙事模板：agent 只负责"剪"，不负责"拍"。开拍前先定本集剧本（四个槽位：日常场景/善行事件/代价/舞步），再按 `shotlist.md` 拍完 A/B/C 三组素材。
+- 这是叙事模板：agent 只负责"剪"，不负责"拍"。开拍前先定本集剧本（六个槽位：日常场景/预知画面形式/善行事件/被帮助者/代价/舞步），再按 `shotlist.md` 拍完 A/B/C 三组素材。
 - 版权在手走"时间轴 1:1 移植"：原声直接用、79 个剪辑点照搬（cutlist.json），节奏锁死，成片好坏取决于素材表现力——尤其是 B2 善行事件的可读性和 C1 热舞的"憋不住的开心"。
 - 高潮是四段脉冲爆闪（15/12/8/17 切）顶到片尾；母版验收多了"叙事四问"和"标志性符号七项指认"，这是本模板区别于纯卡点模板的地方。
 - 模板尚未过 T4 复刻验证（status: DRAFT）；第一集你认可后改 VERIFIED。
