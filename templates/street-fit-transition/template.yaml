@@ -1,0 +1,28 @@
+template_id: street-fit-transition
+name: 街拍变装运镜卡点
+status: DRAFT            # 通过 T4 复刻验证后改 VERIFIED
+master_spec: { width: 1080, height: 1920, fps: 30 }
+
+structure:                     # 段落骨架（秒，随音乐节拍微调）
+  hook_hold: 2.0               # 钩子单镜头时长。调短→更快进入碎剪
+  detail_cut_range: [0.4, 1.2] # 细节段单镜头时长范围。下调→更躁
+  bw_cut_range: [0.7, 2.0]     # 黑白段单镜头时长。上调→更沉
+  transition_frame_s: 0.1      # 眼睛特写转场停留
+  strobe: { window_s: 1.6, cuts: 12 }  # 爆闪段总长与切数。cuts调大→更炸
+  end_hold: 2.0                # 收尾定格时长
+
+pacing:
+  beat_snap: true              # 所有剪辑点吸附节拍网格
+  beat_offset_ms: 0            # 整体卡点偏移。"慢半拍"调负值
+  strobe_at_music_peak: true   # 爆闪段自动对齐音乐能量峰值
+
+grading:
+  bw_sections: [S05, S06, S12] # 转黑白的镜头列表
+  bw_contrast: 1.25            # 黑白段对比度。调大→更硬朗
+  color_saturation: 1.05
+
+camera_feel:
+  keep_handheld_shake: true    # 保留手持晃动（本模板要生猛感，不做稳像）
+  wide_angle_closeups: true
+
+debug_stamp: false             # REVIEW 产物渲染时置 true（烧录帧号|秒数）
