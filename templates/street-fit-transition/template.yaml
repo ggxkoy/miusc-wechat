@@ -3,18 +3,22 @@ name: 街拍变装运镜卡点
 status: DRAFT            # 通过 T4 复刻验证后改 VERIFIED
 master_spec: { width: 1080, height: 1920, fps: 30 }
 
-structure:                     # 段落骨架（秒，随音乐节拍微调）
+structure:                     # 段落骨架（秒；1:1 移植模式下以 cutlist.json 为准，本节仅在"参数复刻"模式下生效）
   hook_hold: 2.0               # 钩子单镜头时长。调短→更快进入碎剪
   detail_cut_range: [0.4, 1.2] # 细节段单镜头时长范围。下调→更躁
   bw_cut_range: [0.7, 2.0]     # 黑白段单镜头时长。上调→更沉
   transition_frame_s: 0.1      # 眼睛特写转场停留
-  strobe: { window_s: 1.6, cuts: 12 }  # 爆闪段总长与切数。cuts调大→更炸
-  end_hold: 2.0                # 收尾定格时长
+  strobe_pulses:               # 四段脉冲爆闪，顶到片尾（参考实测：15/12/8/17 切）
+    - { window_s: 1.6, cuts: 15 }
+    - { window_s: 0.6, cuts: 12 }
+    - { window_s: 0.4, cuts: 8 }
+    - { window_s: 1.0, cuts: 17, end_on: silhouette }  # 最后一帧收在剪影
+  pulse_hold_s: [1.4, 0.8]     # 脉冲之间的喘息镜头时长。调短→更窒息
 
 pacing:
-  beat_snap: true              # 所有剪辑点吸附节拍网格
+  timeline_mode: transplant    # transplant=按 cutlist.json 1:1 移植（版权在手首选）/ parametric=按上方 structure 参数生成
+  beat_snap: true              # parametric 模式下剪辑点吸附节拍网格
   beat_offset_ms: 0            # 整体卡点偏移。"慢半拍"调负值
-  strobe_at_music_peak: true   # 爆闪段自动对齐音乐能量峰值
 
 grading:
   bw_sections: [S05, S06, S12] # 转黑白的镜头列表
