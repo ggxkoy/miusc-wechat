@@ -2,7 +2,7 @@
  "source": "reference/ref.mp4",
  "fps_master": 30,
  "duration_s": 29.907,
- "note": "scene threshold 0.25; cut = 新镜头起点; frame = round(t*30); 版权归用户所有,原音乐与时间轴可直接移植",
+ "note": "scene threshold 0.25; cut=新镜头起点; frame=round(t*30); 版权归用户所有,原音乐与时间轴可直接移植; 段落语义: hook=化身钩子 transform_walk=化身+步伐 wait_sacrifice=牺牲时间等待(含8s预知画面) eye_transition=转场 help_event=小男孩赶电梯+暗中相助+事后微笑 strobe_*=片尾热舞混剪 hold_*=喘息",
  "cuts": [
   {
    "t": 1.933,
@@ -12,82 +12,82 @@
   {
    "t": 1.967,
    "frame": 59,
-   "segment": "detail_color"
+   "segment": "transform_walk"
   },
   {
    "t": 2.5,
    "frame": 75,
-   "segment": "detail_color"
+   "segment": "transform_walk"
   },
   {
    "t": 3.2,
    "frame": 96,
-   "segment": "detail_color"
+   "segment": "transform_walk"
   },
   {
    "t": 4.167,
    "frame": 125,
-   "segment": "detail_color"
+   "segment": "transform_walk"
   },
   {
    "t": 4.6,
    "frame": 138,
-   "segment": "detail_color"
+   "segment": "transform_walk"
   },
   {
    "t": 6.4,
    "frame": 192,
-   "segment": "bw_mood"
+   "segment": "wait_sacrifice"
   },
   {
    "t": 6.933,
    "frame": 208,
-   "segment": "bw_mood"
+   "segment": "wait_sacrifice"
   },
   {
    "t": 7.633,
    "frame": 229,
-   "segment": "bw_mood"
+   "segment": "wait_sacrifice"
   },
   {
    "t": 7.833,
    "frame": 235,
-   "segment": "bw_mood"
+   "segment": "wait_sacrifice"
   },
   {
    "t": 8.0,
    "frame": 240,
-   "segment": "bw_mood"
+   "segment": "wait_sacrifice"
   },
   {
    "t": 8.033,
    "frame": 241,
-   "segment": "bw_mood"
+   "segment": "wait_sacrifice"
   },
   {
    "t": 9.9,
    "frame": 297,
-   "segment": "bw_mood"
+   "segment": "wait_sacrifice"
   },
   {
    "t": 10.7,
    "frame": 321,
-   "segment": "bw_mood"
+   "segment": "wait_sacrifice"
   },
   {
    "t": 11.2,
    "frame": 336,
-   "segment": "bw_mood"
+   "segment": "wait_sacrifice"
   },
   {
    "t": 12.0,
    "frame": 360,
-   "segment": "bw_mood"
+   "segment": "wait_sacrifice"
   },
   {
    "t": 13.767,
    "frame": 413,
-   "segment": "bw_mood"
+   "segment": "wait_sacrifice"
   },
   {
    "t": 14.0,
@@ -102,42 +102,42 @@
   {
    "t": 14.867,
    "frame": 446,
-   "segment": "fit_b_color"
+   "segment": "help_event"
   },
   {
    "t": 15.667,
    "frame": 470,
-   "segment": "fit_b_color"
+   "segment": "help_event"
   },
   {
    "t": 16.9,
    "frame": 507,
-   "segment": "fit_b_color"
+   "segment": "help_event"
   },
   {
    "t": 18.2,
    "frame": 546,
-   "segment": "fit_b_color"
+   "segment": "help_event"
   },
   {
    "t": 18.933,
    "frame": 568,
-   "segment": "fit_b_color"
+   "segment": "help_event"
   },
   {
    "t": 19.433,
    "frame": 583,
-   "segment": "fit_b_color"
+   "segment": "help_event"
   },
   {
    "t": 21.2,
    "frame": 636,
-   "segment": "fit_b_color"
+   "segment": "help_event"
   },
   {
    "t": 22.267,
    "frame": 668,
-   "segment": "fit_b_color"
+   "segment": "help_event"
   },
   {
    "t": 23.667,

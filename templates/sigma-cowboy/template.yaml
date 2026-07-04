@@ -4,18 +4,21 @@ status: DRAFT            # 通过 T4 复刻验证后改 VERIFIED
 master_spec: { width: 1080, height: 1920, fps: 30 }
 
 narrative:                     # 叙事骨架（模板的灵魂，顺序不可变）
-  beats: [化身仪式, 六亲不认步伐, 日常场景, 善行事件, 付出代价, 不回头挥手, 内心泄露, 热舞混剪收尾]
+  beats: [化身仪式, 六亲不认步伐, 日常场景, 预知他人困境, 出手相助(可暗中), 付出代价, 不回头挥手, 内心泄露, 热舞混剪收尾]
   signature_shots:             # 标志性符号，每集成片必须齐全（P 阶段验收硬项）
     - { id: hitchcock_open, desc: 希区柯克式运镜开场 }
     - { id: cheek_earbud,   desc: 吸脸颊+戴耳机化身触发 }
     - { id: hat_press,      desc: 压牛仔帽檐化身完成 }
     - { id: sigma_walk,     desc: 六亲不认的步伐 }
+    - { id: foresight,      desc: 预知画面（视觉形式每集可换，节拍必须在） }
     - { id: wave_leave,     desc: 不回头只挥挥手离场 }
     - { id: dance_montage,  desc: 片尾热舞混剪=压抑不住的喜悦 }
-  slots:                       # 每集可换的叙事槽位（拍摄前定剧本）
-    daily_scene: 超市买东西    # 例：饮品店买冰淇淋/便利店……
-    good_deed: 帮拿重物        # 例：递伞/扶人/帮捡东西……
-    cost: 雪糕弄脏衣服         # 例：雨水打湿衣服……牛仔毫不在意
+  slots:                       # 每集可换的叙事槽位（拍摄前定剧本；示例值=参考视频本集）
+    daily_scene: 电梯口等待    # 例：超市买东西/饮品店买冰淇淋……
+    foresight_visual: 纸张隧道 # 预示未来的视觉装置，每集可换形式
+    good_deed: 暗中按住电梯帮赶时间的小男孩   # 例：帮拿重物/递伞/扶人……
+    helped_person: 赶时间的小男孩             # 被帮助者，每集可换
+    cost: 牺牲自己的一顿饭时间等待            # 例：雪糕弄脏衣服/雨淋湿……
     dance_style: freestyle     # 每集换舞步
 
 structure:                     # 段落骨架（秒；transplant 模式以 cutlist.json 为准，本节仅 parametric 模式生效）
@@ -32,7 +35,7 @@ structure:                     # 段落骨架（秒；transplant 模式以 cutli
   pulse_hold_s: [1.4, 0.8]     # 脉冲间喘息镜头时长。调短→更窒息
 
 pacing:
-  timeline_mode: transplant    # transplant=按 cutlist.json 1:1 移植（同长同曲首选）/ parametric=按 structure 生成（换曲或加长剧情时用）
+  timeline_mode: transplant    # 已锁定：每集时长固定（BGM 固定），按 cutlist.json 1:1 移植；parametric 仅在换曲时启用
   beat_snap: true              # parametric 模式下剪辑点吸附节拍网格
   beat_offset_ms: 0            # 整体卡点偏移。"慢半拍"调负值
 
