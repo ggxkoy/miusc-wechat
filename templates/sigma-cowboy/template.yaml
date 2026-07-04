@@ -1,0 +1,48 @@
+template_id: sigma-cowboy
+name: 西格玛牛仔（现代牛仔善行叙事 + 片尾热舞混剪）
+status: DRAFT            # 通过 T4 复刻验证后改 VERIFIED
+master_spec: { width: 1080, height: 1920, fps: 30 }
+
+narrative:                     # 叙事骨架（模板的灵魂，顺序不可变）
+  beats: [化身仪式, 六亲不认步伐, 日常场景, 善行事件, 付出代价, 不回头挥手, 内心泄露, 热舞混剪收尾]
+  signature_shots:             # 标志性符号，每集成片必须齐全（P 阶段验收硬项）
+    - { id: hitchcock_open, desc: 希区柯克式运镜开场 }
+    - { id: cheek_earbud,   desc: 吸脸颊+戴耳机化身触发 }
+    - { id: hat_press,      desc: 压牛仔帽檐化身完成 }
+    - { id: sigma_walk,     desc: 六亲不认的步伐 }
+    - { id: wave_leave,     desc: 不回头只挥挥手离场 }
+    - { id: dance_montage,  desc: 片尾热舞混剪=压抑不住的喜悦 }
+  slots:                       # 每集可换的叙事槽位（拍摄前定剧本）
+    daily_scene: 超市买东西    # 例：饮品店买冰淇淋/便利店……
+    good_deed: 帮拿重物        # 例：递伞/扶人/帮捡东西……
+    cost: 雪糕弄脏衣服         # 例：雨水打湿衣服……牛仔毫不在意
+    dance_style: freestyle     # 每集换舞步
+
+structure:                     # 段落骨架（秒；transplant 模式以 cutlist.json 为准，本节仅 parametric 模式生效）
+  hook_hold: 2.0               # 开场运镜时长。调短→更快进入碎剪
+  detail_cut_range: [0.4, 1.2] # 化身/步伐段单镜头时长。下调→更躁
+  bw_cut_range: [0.7, 2.0]     # 黑白氛围段单镜头时长。上调→更沉
+  narrative_cut_range: [1.0, 2.5]  # 日常/善行/代价叙事段单镜头时长（叙事要读得懂，不宜碎）
+  transition_frame_s: 0.1      # 眼睛特写转场停留
+  strobe_pulses:               # 片尾热舞混剪：四段脉冲爆闪顶到结束（参考实测 15/12/8/17 切）
+    - { window_s: 1.6, cuts: 15 }
+    - { window_s: 0.6, cuts: 12 }
+    - { window_s: 0.4, cuts: 8 }
+    - { window_s: 1.0, cuts: 17, end_on: silhouette }  # 最后一帧收在剪影
+  pulse_hold_s: [1.4, 0.8]     # 脉冲间喘息镜头时长。调短→更窒息
+
+pacing:
+  timeline_mode: transplant    # transplant=按 cutlist.json 1:1 移植（同长同曲首选）/ parametric=按 structure 生成（换曲或加长剧情时用）
+  beat_snap: true              # parametric 模式下剪辑点吸附节拍网格
+  beat_offset_ms: 0            # 整体卡点偏移。"慢半拍"调负值
+
+grading:
+  bw_sections: [D1, A6]        # 转黑白的镜头（氛围段+收尾剪影）
+  bw_contrast: 1.25            # 黑白段对比度。调大→更硬朗
+  color_saturation: 1.05
+
+camera_feel:
+  keep_handheld_shake: true    # 保留手持晃动（生猛感，不做稳像）
+  wide_angle_closeups: true    # 贴脸镜头用广角畸变
+
+debug_stamp: false             # REVIEW 产物渲染时置 true（烧录帧号|秒数）
