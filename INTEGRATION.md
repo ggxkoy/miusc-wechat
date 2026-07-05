@@ -65,8 +65,9 @@
 - 广告底片 → EDL 单一长 `range`（不切，或按解说节奏分几段）。
 - 游玩片段画中画 → **动画槽位**：把 PiP 合成为一个带位置/圆角/角标的叠加视频（PIL 或 HyperFrames 槽位都行），产出 `slot_pip/render.mp4`，进 EDL `overlays`，按 `{gameplay:}` 标记的时间窗出现。
 - 中文解说 → **TTS**：video-use 自带 ElevenLabs（音质高、付费）。我们模板原定 edge-tts（免费）。二选一见第 4 节。逐句配音→逐句 SRT（用 render 的 `--build-subtitles` 或我们自己生成 master.srt）。
-- 原声闪避 → video-use 音频处理天然支持在解说段压低底片原声（sidechain/音量自动化）；`template.yaml → audio_mix.duck_db` 映射为 render 的混音参数。
+- 原声闪避 + 独立配音轨 → **render.py 原生不做这两件事**（核实过：EDL 只有 sources/ranges/grade/overlays/subtitles，没有 voiceover/music/duck 字段；音频只做分段 concat + 30ms 淡变 + loudnorm）。因此配音混音由上层在 render.py 出片后补一个 ffmpeg pass：把底片原声在每句解说窗口压低 `audio_mix.duck_db`（sidechaincompress 或按时间轴 volume 自动化），叠加 TTS 配音轨，最后 -14 LUFS。分工：render.py 出"画面 + 底片原声 + 字幕"，上层音频 pass 加"配音 + 闪避"。
 - 字幕最后烧录 → 硬规则第 1 条，正好符合我们"字幕逐句同步"的要求。
+- 画中画摆位 → **render.py 的 overlay 无 x/y，默认贴 0,0（全画布）**。所以 PiP 必须作为动画槽位预合成为"全画布透明 + 角落游玩片段"的带 alpha overlay 视频（ffmpeg/PIL/HyperFrames 出 yuva420p WebM），EDL `overlays[].file` 指向它。`template.yaml → pip.*` 参数在合成 overlay 时消费，不传给 render.py。
 
 ### 3.3 wechat-chat-music（图形聊天）
 
@@ -122,13 +123,14 @@ projects/<id>/
 | 调色 / 转写 / TTS / 动画槽位 / 自评 | **下层让渡给 video-use** | helpers 已实现 |
 | Remotion 从零组装 | **降级** | 从"主渲染器"降为"动画槽位之一" |
 
-## 7. 落地步骤（待用户认可本文档后执行）
+## 7. 落地进度
 
-1. 把 video-use 作为 submodule 引入本整合分支（复用 `codex/add-video-use-submodule` 的做法）。
-2. 在 `VIRAL_VIDEO_REPLICATION_WORKFLOW.md` 里把"渲染引擎"章节改写为"调用 video-use"，并新增 `compile_edl` 节点。
-3. 三个模板的 OPENCLAW_TASK 各加一段"编译 EDL → 调 render.py"的指令；PiP、TTS、闪避映射为 EDL/render 参数。
-4. 记录唯一冲突点（sigma-cowboy 爆闪段关闭 padding）的处理方式。
-5. 首个项目用 game-commentary 跑通端到端（契合度最高），验证分层可行后再推广。
+- [x] video-use 作为 submodule 引入本整合分支（`92c2b34`，与 codex 分支同 commit）。
+- [x] `VIRAL_VIDEO_REPLICATION_WORKFLOW.md` 强制规则 1 改为默认 video-use；新增第 3.5 节"video-use 引擎与 EDL 编译"。
+- [x] **game-commentary 落地**：OPENCLAW_TASK 改为"时间轴 + PiP 槽位 + 编译 EDL → render.py + 音频混音 pass"，记录两处 render.py 原生缺口（配音闪避、overlay 摆位）的上层补法。
+- [ ] sigma-cowboy 落地：cutlist → EDL ranges，爆闪段标注关闭 padding。
+- [ ] wechat-chat-music 迁移为标准模板包并接 EDL（聊天气泡作为动画槽位）。
+- [ ] 首个项目用 game-commentary 跑通端到端，验证分层。
 
 ## 8. 决策记录与待确认
 

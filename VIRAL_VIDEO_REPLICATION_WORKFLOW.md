@@ -31,7 +31,7 @@
 
 沿用微信聊天工作流的全部强制规则（逐节点验收、`REVIEW` 后停止、`*_APPROVED` 产物不可覆盖、未经授权不得上传发布、节点级驳回只修被驳回节点），并新增：
 
-1. 剪辑渲染必须使用可脚本化引擎（默认 Remotion + FFmpeg，规范沿用微信聊天工作流第 8～9 节），禁止剪映、CapCut 等 GUI 工具人工剪辑；产物必须能由命令行复现。
+1. 剪辑渲染必须使用可脚本化引擎，禁止剪映、CapCut 等 GUI 工具人工剪辑；产物必须能由命令行复现。**默认引擎为 video-use**（`video-use/` submodule，browser-use 开源，见第 3.5 节）：上层时间轴编译成 video-use 的 `edl.json`，交给 `video-use/helpers/render.py` 出片，白捡它的分段无损渲染、防爆音、字幕最后烧录等 12 条生产硬规则。Remotion/HyperFrames/PIL 降为 video-use 的动画槽位之一。整合方案详见 `INTEGRATION.md`。
 2. 所有影响观感的效果（节奏、镜头、构图、表情包密度、字幕样式等）必须落在结构化参数文件里（`template.yaml`、`timeline.json`），不允许把效果硬写死在组件代码里无法调整——这是第 8 节反馈协议能运转的前提。
 3. 用户的拆解思路原文必须原样保留（`breakdown.md` 的"原文"区），执行代理的结构化整理只能追加在后面，不得改写、缩写或"优化"用户的表述。
 4. 收到自然语言反馈后，必须先输出"反馈解析报告"（第 8.2 节格式）并获确认，才能修改参数；禁止直接改完回复"已按意见调整"。
@@ -68,7 +68,26 @@ PENDING → RUNNING → REVIEW → APPROVED
 - **yt-dlp**：凡是以链接为输入的模板（sigma-cowboy 抓参考视频、game-commentary 抓广告底片）都用它下载。`pip install -U yt-dlp` 或 `pipx install yt-dlp`；建议定期升级，平台改版后旧版本会失效。遇登录墙/验证码/风控时暂停，请用户手动下载后以文件方式提供，不得反复重试触发风控。
 - **TTS**：game-commentary 等需要配音的模板用。默认 `pip install edge-tts`（免费、CLI、零部署）；音质升级或声音克隆见该模板 `breakdown.md` 选型表。
 - 需要生成音乐的模板：可用的 Suno 账号（登录、验证码、付费确认必须人工介入）。
+- **video-use 引擎**：`git submodule update --init video-use` 拉取；按 `video-use/install.md` 装 Python 依赖（`uv sync` 或 `pip install -e .`）。TTS 用 MiniMax/edge-tts 时不需要 ElevenLabs key；用 video-use 原生 TTS 才需要。
 - 检查命令、Remotion 初始化、与 FFmpeg 的分工，全部沿用 `OPENCLAW_WECHAT_MUSIC_VIDEO_WORKFLOW.md` 第 3、8、9 节，不重复。
+
+### 3.5 video-use 引擎与 EDL 编译
+
+渲染统一走 video-use（`video-use/` submodule）。上层各模板的时间轴（`cutlist.json` / `timeline.json`）新增一个 **`compile_edl`** 环节，翻译成 video-use 的 `edl.json`，再调 `render.py` 出片：
+
+```bash
+# 编译（上层脚本产出）→ 渲染（video-use 引擎）
+python video-use/helpers/render.py projects/<id>/edit/edl.json \
+  -o projects/<id>/edit/preview.mp4 --preview        # 样片
+python video-use/helpers/render.py projects/<id>/edit/edl.json \
+  -o projects/<id>/edit/final.mp4                     # 母版（默认 -14 LUFS）
+```
+
+EDL 结构与三个模板的映射见 `INTEGRATION.md` 第 2～3 节。三条要点：
+
+1. **overlay 是全画布叠加**（render.py 的 overlay 无 x/y，默认贴 0,0）。画中画、贴纸等要作为**动画槽位**预合成为"全画布透明 + 目标位置内容"的 overlay 视频（PIL/HyperFrames 出带 alpha 的 WebM），EDL 的 `overlays[].file` 指向它。
+2. **render.py 原生不含独立配音轨与原声闪避**：需要 TTS 解说 + 底片原声压低的模板（game-commentary），在 render.py 出片后由上层补一个 ffmpeg 音频混音 pass（见该模板 OPENCLAW_TASK）。
+3. **冲突以模板优先**（用户确认）：模板观感与 video-use 硬规则冲突时以模板为准，但只让位"品味型默认值"（如 padding），防爆音/字幕最后/不双重编码等正确性硬规则保留；覆盖须在 EDL 显式标注理由供审计（详见 `INTEGRATION.md` 3.1）。
 
 ---
 
