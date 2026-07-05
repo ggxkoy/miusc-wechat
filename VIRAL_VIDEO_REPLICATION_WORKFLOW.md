@@ -65,6 +65,8 @@ PENDING → RUNNING → REVIEW → APPROVED
 - OpenClaw 或 MiniMax M3，启用文件、Shell、无头浏览器能力。
 - Node.js 20+、npm、Git。
 - Remotion（随各模板包的 `remotion/` 子工程安装）；FFmpeg/FFprobe（带 `libass`）。
+- **yt-dlp**：凡是以链接为输入的模板（sigma-cowboy 抓参考视频、game-commentary 抓广告底片）都用它下载。`pip install -U yt-dlp` 或 `pipx install yt-dlp`；建议定期升级，平台改版后旧版本会失效。遇登录墙/验证码/风控时暂停，请用户手动下载后以文件方式提供，不得反复重试触发风控。
+- **TTS**：game-commentary 等需要配音的模板用。默认 `pip install edge-tts`（免费、CLI、零部署）；音质升级或声音克隆见该模板 `breakdown.md` 选型表。
 - 需要生成音乐的模板：可用的 Suno 账号（登录、验证码、付费确认必须人工介入）。
 - 检查命令、Remotion 初始化、与 FFmpeg 的分工，全部沿用 `OPENCLAW_WECHAT_MUSIC_VIDEO_WORKFLOW.md` 第 3、8、9 节，不重复。
 
