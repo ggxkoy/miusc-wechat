@@ -131,18 +131,16 @@ projects/<id>/
 - [x] **素材脚手架落地**（架构审计后补）：`library/`（memes/music/sfx/fonts + index.json 授权索引）、`channels/`（五渠道 yaml，按工作流 9.2 初始画像）、`projects/` 骨架已建；`.gitignore` 划定媒体边界——项目工作区只跟踪 planning/、feedback-log、edl.json、master.srt 等小文本，素材与渲染产物不进 git。
 - [x] 文档口径统一：仓库根即工厂根；video-use 不需要 ElevenLabs key（仅 transcribe.py 用，三模板均不转写）；compile_edl 前强制 30fps 工作副本。
 - [ ] sigma-cowboy 落地：cutlist → EDL ranges，爆闪段标注关闭 padding。
-- [ ] wechat-chat-music 迁移为标准模板包并接 EDL（聊天气泡作为动画槽位）；顺带把根 `reference/` 的方律师参考视频移入 `templates/wechat-chat-music/reference/`，统一"参考素材放模板包内"的惯例。
+- [x] **素材归属规则定稿（用户裁定）**：非通用素材一律跟随项目——模板包纯文本化（配方），参考视频移入 `projects/tpl-<template_id>/input/reference/`（sigma-cowboy 与方律师视频均已归位，媒体不再进 git，来源登记在 breakdown 可重取；方律师视频为用户手工提供、无来源链接，需用户自行备份，git 历史中仍可找回）。
+- [ ] wechat-chat-music 迁移为标准模板包并接 EDL（聊天气泡作为动画槽位）。
 - [ ] 首个项目用 game-commentary 跑通端到端，验证分层。
 
 已知提醒：`codex/add-video-use-submodule` 分支与本分支都添加了同一 submodule（同 commit `92c2b34`），两分支若都要合入 main，`.gitmodules` 会出现一次内容相同的琐碎冲突，任选一边即可。
 
-## 8. 决策记录与待确认
+## 8. 决策记录
 
-已确认：
+- [x] 整合方向（分层方案）用户认可。
 - [x] **冲突裁决：爆款模板优先于引擎默认**（见 3.1）。正确性硬规则保留，品味型默认值让位。
 - [x] **TTS 加入 MiniMax TTS**：执行代理为 M3 时的推荐主力；edge-tts 免费兜底，ElevenLabs 备选（见 4）。
-
-待确认：
-- [ ] 整合方向（本文档的分层方案）是否认可？
-- [ ] 是否把 video-use 以 submodule 方式并入本整合分支（便于统一克隆）？
-- [ ] 先落地哪个模板？（建议 game-commentary）
+- [x] video-use 以 submodule 并入本分支；首个落地模板选 game-commentary。
+- [x] **素材归属（用户裁定）**：通用进 `library/`，非通用一律跟随项目（含参考视频，放 `projects/tpl-<id>/input/reference/`），模板包只存文本配方。

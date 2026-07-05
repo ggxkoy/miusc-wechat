@@ -3,12 +3,12 @@
 ## T0 素材登记
 
 - 来源链接：https://vt.tiktok.com/ZSCqwTQwx/ → https://www.tiktok.com/@i.vui.v46/video/7633710996854410514
-- 抓取日期：2026-07-04（yt-dlp，本地文件 `reference/ref.mp4` 为准）
+- 抓取日期：2026-07-04（yt-dlp，本地文件 `projects/tpl-sigma-cowboy/input/reference/ref.mp4` 为准；媒体跟随项目、不进 git，可按来源链接重取）
 - 规格：576×1024（9:16）、30fps、29.9s、HEVC + AAC
 - 数据：2,800,000 播放 / 268,800 赞 / 3,741 评论 / 19,800 转发
 - 作者：@i.vui.v46（唐嘉琦）；音乐：原声（âm thanh gốc - 唐嘉琦）
 - 文案：Ngày hôm nay bạn cảm thấy thế nào（越南语："你今天感觉怎么样"）#xuhuong
-- 版权：**用户持有本参考视频版权**——原音乐可直接用于复刻成片，剪辑时间轴可 1:1 移植（完整剪辑点见 `reference/cutlist.json`，79 个剪辑点，含帧号与段落标注）。
+- 版权：**用户持有本参考视频版权**——原音乐可直接用于复刻成片，剪辑时间轴可 1:1 移植（完整剪辑点见模板包 `cutlist.json`，79 个剪辑点，含帧号与段落标注）。
 
 ## 用户拆解原文
 

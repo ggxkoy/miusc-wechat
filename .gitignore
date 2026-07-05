@@ -19,10 +19,12 @@ library/sfx/*
 library/fonts/*
 !library/*/.gitkeep
 
-# 模板专有大素材（参考视频已入库的保留；新增大文件按需评估）
-templates/*/assets/*.mp4
-templates/*/assets/*.mov
-templates/*/assets/*.wav
+# 模板包只存文本配方（用户裁定：非通用素材一律跟随项目），
+# 兜底拦截误放进模板包的媒体
+templates/**/*.mp4
+templates/**/*.mov
+templates/**/*.wav
+templates/**/*.webm
 
 # ===== 运行时垃圾 =====
 node_modules/

@@ -23,13 +23,13 @@ templates/sigma-cowboy/ 制作一集视频。逐节点验收，每个节点完�
 
 == 输入 ==
 - 模板包：templates/sigma-cowboy/（breakdown.md 拆解、template.yaml
-  参数、shotlist.md 拍摄清单、reference/cutlist.json 剪辑点数据）
+  参数、shotlist.md 拍摄清单、cutlist.json 剪辑点数据）
 - 实拍素材：projects/<id>/input/footage/（A1~A6 标志镜头、B0~B4
   本集叙事（含 B0 预知画面）、C1~C2 热舞碎片、D1 氛围；缺失任何
   A/C 组或 B0 素材则列出清单停止等待；B1~B4 缺失时询问本集是否
   为"纯人设展示集"）
 - 音乐：参考视频原声（用户持有版权）。提取：
-  ffmpeg -i templates/sigma-cowboy/reference/ref.mp4 -vn -c:a copy
+  ffmpeg -i projects/tpl-sigma-cowboy/input/reference/ref.mp4 -vn -c:a copy
   audio/song_APPROVED.m4a
 - 参考视频仅画面对照用，其画面不得进入成片；原声可用。
 

@@ -105,23 +105,22 @@ viral-video-factory/   ← 即仓库根
 │  ├─ sfx/                         # 音效（提示音、鼓点、whoosh 等）
 │  ├─ fonts/                       # 字体（注意商用授权）
 │  └─ index.json                   # 素材索引：标签、情绪、来源、授权状态
-├─ templates/                      # 模板包，每种爆款一个
+├─ templates/                      # 模板包 = 纯文本配方，不存任何媒体
 │  └─ <template_id>/
-│     ├─ reference/                # 参考视频（可多条）
 │     ├─ breakdown.md              # 用户拆解思路原文 + 结构化拆解
 │     ├─ template.yaml             # 可调参数及默认值（每项带观感注释）
-│     ├─ acceptance.md             # 对照参考视频的效果验收清单
-│     ├─ remotion/                 # 模板专属 Remotion 工程
-│     └─ assets/                   # 模板专有素材（不放通用库）
+│     ├─ cutlist.json / acceptance.md 等派生数据与清单
+│     └─ （可选）remotion/ 等代码工程
 ├─ channels/                       # 渠道画像（见第 9 节）
 │  ├─ tiktok.yaml
 │  ├─ xiaohongshu.yaml
 │  ├─ bilibili.yaml
 │  ├─ wechat-channels.yaml
 │  └─ kuaishou.yaml
-└─ projects/                       # 每条内容一个项目
+└─ projects/                       # 每条内容一个项目；阶段 T 也是项目
+   ├─ tpl-<template_id>/           # 模板固化项目：参考视频放 input/reference/
    └─ <project_id>/
-      ├─ input/                    # 本条内容的原始素材
+      ├─ input/                    # 本条内容的原始素材（含 reference/）
       ├─ planning/                 # project.yaml、timeline_v1.json、workflow-state.json
       ├─ audio/
       ├─ preview/                  # 样片、对比样片、九宫格检查图
@@ -160,9 +159,14 @@ viral-video-factory/   ← 即仓库根
 - 执行代理挑选素材时按 `tags`/`emotion` 匹配拆解思路里的情绪点，给出 2～3 个候选让用户选，不自作主张定稿。
 - 新素材入库必须同步更新 `index.json`，不允许目录里出现未登记文件。
 
-### 5.2 模板专有素材 `templates/<id>/assets/`
+### 5.2 素材归属规则（用户裁定：非通用素材一律跟随项目）
 
-只服务于该模板的素材（特定头像风格、特定贴纸、模板专用 BGM 候选）放在模板包内，不进通用库；通用库只收跨模板可复用的素材。判断标准：换一个模板还用得上吗？用得上才进 `library/`。
+媒体素材只有两个家：
+
+1. **`library/`**：跨模板可复用的通用素材（meme、音乐、音效、字体），入库必须登记授权。
+2. **`projects/<id>/input/`**：其余一切媒体——本期实拍/游玩片段、广告底片、**参考视频**（放 `input/reference/`）。阶段 T（模板固化）本身就是一个项目，目录约定 `projects/tpl-<template_id>/`。
+
+模板包（`templates/<id>/`）**只存文本配方**：拆解、参数、剪辑点数据、清单、代码工程，不存任何媒体文件。某模板每集都要用的素材（如固定 BGM、专属贴纸）进 `library/` 并在 index.json 打上 `template:<id>` 标签。判断口诀：通用进库、其余随项目、模板只放字。
 
 ---
 
@@ -172,7 +176,7 @@ viral-video-factory/   ← 即仓库根
 
 | 节点 | 名称 | 主要产物 | 核心验收内容 |
 |---|---|---|---|
-| T0 | 素材入库 | `reference/`、`breakdown.md`（原文区） | 参考视频可读、拆解原文完整保留 |
+| T0 | 素材入库 | `projects/tpl-<id>/input/reference/`、`breakdown.md`（原文区） | 参考视频可读、拆解原文完整保留 |
 | T1 | 结构化拆解 | `breakdown.md`（结构化区） | 与用户思路一致、疑点已提问 |
 | T2 | 参数化 | `template.yaml` | 每个观感维度都有对应参数 |
 | T3 | 组件实现 | `remotion/` 工程 | 可无头渲染、参数全部生效 |
@@ -182,11 +186,12 @@ viral-video-factory/   ← 即仓库根
 
 参考视频接受两种输入方式：
 
-- **文件**：直接放入 `reference/`。
-- **链接**：抖音/TikTok/小红书/B站/快手等平台的分享链接。执行代理用无头浏览器或下载工具获取视频文件存入 `reference/`，并在 `breakdown.md` 登记来源 URL 和抓取日期。注意：
+- **文件**：直接放入 `projects/tpl-<template_id>/input/reference/`。
+- **链接**：抖音/TikTok/小红书/B站/快手等平台的分享链接。执行代理用无头浏览器或下载工具获取视频文件存入 `projects/tpl-<template_id>/input/reference/`，并在 `breakdown.md` 登记来源 URL 和抓取日期。注意：
   - 遇到登录墙、验证码或反爬拦截时暂停，请用户手动下载后以文件方式提供，不得反复重试触发风控。
   - 平台水印无需去除——参考视频只用于内部拆解学习，不进入任何交付成片。
   - 链接可能失效，抓取成功后以本地文件为准，后续节点不再依赖原链接。
+  - 参考视频等媒体不进 git（.gitignore 已划界）；来源链接和规格登记在 breakdown.md 里以便重取。用户手工提供、没有来源链接的媒体，提醒用户自行备份（网盘/本地）。
 
 入库步骤：
 
@@ -259,7 +264,7 @@ style:                       # 视觉风格
 用与参考视频相同（或等价）的内容素材，通过模板渲染一条复刻版，并生成并排对比：
 
 ```powershell
-ffmpeg -y -i reference/ref.mp4 -i preview/replica.mp4 `
+ffmpeg -y -i input/reference/ref.mp4 -i preview/replica.mp4 `
   -filter_complex "[0:v]scale=540:960[l];[1:v]scale=540:960[r];[l][r]hstack" `
   preview/replica_vs_reference.mp4
 ```
