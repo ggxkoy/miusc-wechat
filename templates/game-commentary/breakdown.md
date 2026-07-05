@@ -61,12 +61,12 @@
 
 | 引擎 | 定位 | 说明 |
 |---|---|---|
-| edge-tts（默认） | 免费、CLI、零部署 | 微软神经语音，中文音色多（如 zh-CN-YunxiNeural 男声 / zh-CN-XiaoxiaoNeural 女声），`pip install edge-tts` 即用 |
-| MiniMax TTS API | 质量升级 | 执行代理是 MiniMax M3 时顺理成章；中文表现力强，需 API key |
-| Azure Speech | 质量升级 | 与 edge-tts 同源但可控性更强（SSML 精调），需订阅 |
-| CosyVoice / GPT-SoVITS | 克隆自己的声音 | 开源本地部署，用户想用本人音色时启用，需 GPU |
+| MiniMax TTS API（M3 推荐主力） | 高音质、同生态 | 执行代理是 MiniMax M3 时同源最顺，免额外接引擎；中文表现力强，支持声音克隆，需 API key |
+| edge-tts（免费兜底） | 免费、CLI、零部署 | 微软神经语音，中文音色多（如 zh-CN-YunxiNeural 男声 / zh-CN-XiaoxiaoNeural 女声），`pip install edge-tts` 即用；跑通链路首选 |
+| ElevenLabs | video-use 原生 | 整合 video-use 引擎时的原生 TTS，音质高、需 API key |
+| CosyVoice / GPT-SoVITS | 克隆自己的声音（本地） | 开源本地部署，用户想用本人音色又不想走云 API 时启用，需 GPU |
 
-默认走 edge-tts 起步，用户对音质有更高要求时按表升级；引擎与音色都是 `template.yaml` 参数。
+选择顺序：免费跑通用 edge-tts；执行代理是 M3 时用 MiniMax TTS 作主力；接入 video-use 引擎或已有 key 时用 ElevenLabs。引擎与音色都是 `template.yaml → tts` 参数。
 
 ## 验收要点（母版）
 

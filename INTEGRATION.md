@@ -54,7 +54,9 @@
 - 黑白段 → `grade` 用分段调色（video-use 支持 per-segment grade），对应 `template.yaml → grading.bw_sections`。
 - 片尾剪影收尾 → 最后一个 range 定格 + `total_duration_s` 锁 29.9s。
 - 原声 → EDL 不单独列 BGM 字段时，用 render 的音频轨挂载参考原声（版权在手）。
-- **手持晃动、爆闪切点**：video-use 硬规则第 7 条"每个切点补 30–200ms"要放宽——爆闪段是刻意贴着切点的，需在 compile_edl 时对 strobe 段关闭 padding（EDL 层标注 `no_pad: true` 或在 render 调用时对该段特殊处理）。这是本模板与 video-use 默认口径的唯一冲突点，已记录。
+- **手持晃动、爆闪切点**：video-use 硬规则第 7 条"每个切点补 30–200ms"要放宽——爆闪段是刻意贴着切点的，需在 compile_edl 时对 strobe 段关闭 padding（EDL 层标注 `no_pad: true` 或在 render 调用时对该段特殊处理）。这是本模板与 video-use 默认口径的冲突点。
+
+  **冲突裁决原则（用户确认）：爆款模板优先级高于引擎默认。** 当模板的观感要求与 video-use 硬规则冲突时，以模板为准。此处覆盖是安全的：硬规则第 7 条 padding 的本意是吸收 Scribe（ASR）时间戳 50–100ms 的漂移，而爆闪切点来自 `cutlist.json` 的**帧精确剪辑点**，不经 ASR，不存在漂移，因此关闭 padding 不会引入硬规则要防的错误。真正关乎正确性的硬规则（防爆音 30ms 淡变、字幕最后烧录、不双重编码）仍然全部保留——让位的只是"品味型默认值"，不是"正确性规则"。compile_edl 在遇到此类冲突时须在 EDL 里显式标注覆盖项及理由，供 REVIEW 审计。
 
 ### 3.2 game-commentary（广告底片 · 画中画 · TTS 配音）
 
@@ -72,16 +74,22 @@
 - 音乐（Suno 产物）作为主音轨；卡点仍由上层时间轴决定，EDL 负责串接。
 - 这是三个里最不"audio-first"的，video-use 的转写/切词能力用不上，但它的 concat/字幕/叠加/自评仍然可用。
 
-## 4. TTS 选型：ElevenLabs vs edge-tts
+## 4. TTS 选型：edge-tts / MiniMax TTS / ElevenLabs
 
-| | ElevenLabs（video-use 默认） | edge-tts（我们模板原定） |
-|---|---|---|
-| 音质 | 高，中文自然 | 中上，够用 |
-| 成本 | 付费，需 API key | 免费 |
-| 部署 | 已在 video-use 内置 | `pip install edge-tts` |
-| 声音克隆 | 支持 | 不支持 |
+| | edge-tts | **MiniMax TTS** | ElevenLabs（video-use 默认） |
+|---|---|---|---|
+| 音质 | 中上，够用 | 高，中文表现力强 | 高，中文自然 |
+| 成本 | 免费 | 按量付费，需 API key | 付费，需 API key |
+| 部署 | `pip install edge-tts` | MiniMax API | video-use 内置 |
+| 声音克隆 | 不支持 | 支持 | 支持 |
+| 适配 | 通用 | **执行代理是 MiniMax M3 时同源，最顺** | video-use 原生 |
 
-**建议**：默认用 **edge-tts 起步跑通链路**（零成本、免 key），成片质量要上台面或要克隆自己的声音时切 ElevenLabs。两者都在 `template.yaml → tts.engine` 参数里可切，compile_edl 阶段按引擎生成配音文件即可，对下层 render 透明。
+**建议（用户确认加入 MiniMax）**：
+- 免费跑通链路用 **edge-tts**。
+- 执行代理是 **MiniMax M3** 时优先用 **MiniMax TTS**（同生态、免额外接引擎、中文表现力好），这是本项目的推荐主力。
+- 需要 video-use 原生流程或已有 ElevenLabs key 时用 **ElevenLabs**。
+
+三者都在 `template.yaml → tts.engine` 参数里可切（`edge-tts` / `minimax` / `elevenlabs`），compile_edl 阶段按引擎生成配音文件，对下层 render 透明。
 
 ## 5. 目录约定
 
@@ -122,9 +130,13 @@ projects/<id>/
 4. 记录唯一冲突点（sigma-cowboy 爆闪段关闭 padding）的处理方式。
 5. 首个项目用 game-commentary 跑通端到端（契合度最高），验证分层可行后再推广。
 
-## 8. 待用户确认
+## 8. 决策记录与待确认
 
+已确认：
+- [x] **冲突裁决：爆款模板优先于引擎默认**（见 3.1）。正确性硬规则保留，品味型默认值让位。
+- [x] **TTS 加入 MiniMax TTS**：执行代理为 M3 时的推荐主力；edge-tts 免费兜底，ElevenLabs 备选（见 4）。
+
+待确认：
 - [ ] 整合方向（本文档的分层方案）是否认可？
-- [ ] TTS 默认 edge-tts 起步、按需升级 ElevenLabs，是否同意？
 - [ ] 是否把 video-use 以 submodule 方式并入本整合分支（便于统一克隆）？
 - [ ] 先落地哪个模板？（建议 game-commentary）
