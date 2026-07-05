@@ -1,0 +1,14 @@
+channel: bilibili
+aspect: "9:16 或 16:9"        # 横屏需重构图时回母版节点确认
+resolution: 1080x1920         # 竖屏直出默认；横屏 1920x1080
+duration: { min: 20, sweet: [30, 180], max: 600 }
+hook_window_s: 5.0
+ui_unsafe:
+  bottom_px: 200
+subtitle: { position: bottom, max_lines: 2 }
+pacing_bias: medium-slow
+audio_loudness_lufs: -14
+cover_required: true
+deliverables_extra: [cover.jpg, title.txt]
+content_label: "剧情演绎"
+notes: 开头可稍缓但需"值得看完"的信息密度；字幕规范、弹幕梗可用。数值为初始默认。

@@ -1,0 +1,14 @@
+channel: kuaishou
+aspect: "9:16"
+resolution: 1080x1920
+duration: { min: 10, sweet: [20, 57], max: 90 }
+hook_window_s: 2.0
+ui_unsafe:
+  bottom_px: 280
+  right_px: 130
+subtitle: { position: center-low, max_lines: 2 }
+pacing_bias: medium-fast
+audio_loudness_lufs: -14
+cover_required: false
+content_label: "剧情演绎"
+notes: 叙事完整、结尾收得住比纯快更重要；老铁向表达可保留。数值为初始默认。

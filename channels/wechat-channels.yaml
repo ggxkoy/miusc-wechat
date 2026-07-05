@@ -1,0 +1,14 @@
+channel: wechat-channels      # 微信视频号
+aspect: "9:16"                # 显示区近 6:7，关键内容保持画面中部
+resolution: 1080x1920
+safe_display: "6:7 居中"      # 关键人物/文字保持在中部 1080x1260 内
+duration: { min: 15, sweet: [30, 60], max: 300 }
+hook_window_s: 3.0
+ui_unsafe:
+  bottom_px: 320
+subtitle: { position: center, max_lines: 2, font_scale: 1.15 }  # 受众年龄偏高，字号加大
+pacing_bias: medium
+audio_loudness_lufs: -14
+cover_required: false
+content_label: "剧情演绎"
+notes: 社交转发驱动；节奏略缓、避免过密网络梗。数值为初始默认。

@@ -1,0 +1,15 @@
+channel: xiaohongshu
+aspect: "9:16"                # 也支持 3:4，裁切时确认
+resolution: 1080x1920
+duration: { min: 10, sweet: [15, 60], max: 300 }
+hook_window_s: 3.0
+ui_unsafe:
+  bottom_px: 260
+  right_px: 120
+subtitle: { position: center-low, max_lines: 2 }
+pacing_bias: medium
+audio_loudness_lufs: -14
+cover_required: true          # 封面+标题决定点击
+deliverables_extra: [cover.jpg, title.txt]   # title.txt 三个候选
+content_label: "剧情演绎"
+notes: 封面首图和标题是分发核心；画面调性偏干净。数值为初始默认。

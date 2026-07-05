@@ -1,0 +1,14 @@
+channel: tiktok
+aspect: "9:16"
+resolution: 1080x1920
+duration: { min: 8, sweet: [15, 34], max: 60 }
+hook_window_s: 1.5          # 爆点必须出现在此时间内
+ui_unsafe:                   # 平台 UI 遮挡区
+  bottom_px: 300             # 文案/进度条区
+  right_px: 140              # 点赞/评论按钮列
+subtitle: { position: center-low, max_lines: 2 }
+pacing_bias: fast
+audio_loudness_lufs: -14
+cover_required: false
+content_label: "剧情演绎"
+notes: 完播率导向，前 2 秒流失最重；BGM 热度影响分发。数值为初始默认，按投放数据修订。

@@ -83,18 +83,22 @@ python video-use/helpers/render.py projects/<id>/edit/edl.json \
   -o projects/<id>/edit/final.mp4                     # 母版（默认 -14 LUFS）
 ```
 
-EDL 结构与三个模板的映射见 `INTEGRATION.md` 第 2～3 节。三条要点：
+EDL 结构与三个模板的映射见 `INTEGRATION.md` 第 2～3 节。五条要点：
 
 1. **overlay 是全画布叠加**（render.py 的 overlay 无 x/y，默认贴 0,0）。画中画、贴纸等要作为**动画槽位**预合成为"全画布透明 + 目标位置内容"的 overlay 视频（PIL/HyperFrames 出带 alpha 的 WebM），EDL 的 `overlays[].file` 指向它。
 2. **render.py 原生不含独立配音轨与原声闪避**：需要 TTS 解说 + 底片原声压低的模板（game-commentary），在 render.py 出片后由上层补一个 ffmpeg 音频混音 pass（见该模板 OPENCLAW_TASK）。
 3. **冲突以模板优先**（用户确认）：模板观感与 video-use 硬规则冲突时以模板为准，但只让位"品味型默认值"（如 padding），防爆音/字幕最后/不双重编码等正确性硬规则保留；覆盖须在 EDL 显式标注理由供审计（详见 `INTEGRATION.md` 3.1）。
+4. **不需要 ElevenLabs key**：video-use 的冷启动检查要求 `ELEVENLABS_API_KEY`，但那只有它的 `transcribe.py`（ASR 转写）用得到。本工作流三个模板都不需要转写（解说词/台词由用户提供，牛仔片无台词），TTS 走 MiniMax/edge-tts——执行代理应跳过该项检查，不要向用户索要 ElevenLabs key，除非某模板明确要用 Scribe 转写或 ElevenLabs TTS。
+5. **强制 30fps**：video-use 输出规格默认"跟随源"，与本工作流"全流程统一 30fps"（总体原则第 7 条）不一致。compile_edl 前把所有非 30fps 源转出 30fps 工作副本，渲染后用 ffprobe 验证输出为 30fps。
 
 ---
 
 ## 4. 目录结构
 
+**本仓库根目录即工厂根目录**（下文的 `viral-video-factory/` 就是仓库根，不需要再套一层）。`library/`、`channels/`、`projects/` 已在仓库中建好骨架；媒体与文本的 git 边界由根目录 `.gitignore` 划定——项目工作区只跟踪 `planning/`、`feedback-log.md`、`edit/edl.json`、`edit/master.srt` 等小文本，输入素材、音频、渲染产物一律不进 git（按 `library/index.json` 的 source 字段可重新获取，团队同步用网盘或 Git LFS）。
+
 ```text
-viral-video-factory/
+viral-video-factory/   ← 即仓库根
 ├─ library/                        # 通用素材库（跨模板共享，见第 5 节）
 │  ├─ memes/                       # 表情包/meme 图
 │  ├─ music/                       # 音乐（含授权信息）

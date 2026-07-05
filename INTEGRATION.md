@@ -128,9 +128,13 @@ projects/<id>/
 - [x] video-use 作为 submodule 引入本整合分支（`92c2b34`，与 codex 分支同 commit）。
 - [x] `VIRAL_VIDEO_REPLICATION_WORKFLOW.md` 强制规则 1 改为默认 video-use；新增第 3.5 节"video-use 引擎与 EDL 编译"。
 - [x] **game-commentary 落地**：OPENCLAW_TASK 改为"时间轴 + PiP 槽位 + 编译 EDL → render.py + 音频混音 pass"，记录两处 render.py 原生缺口（配音闪避、overlay 摆位）的上层补法。
+- [x] **素材脚手架落地**（架构审计后补）：`library/`（memes/music/sfx/fonts + index.json 授权索引）、`channels/`（五渠道 yaml，按工作流 9.2 初始画像）、`projects/` 骨架已建；`.gitignore` 划定媒体边界——项目工作区只跟踪 planning/、feedback-log、edl.json、master.srt 等小文本，素材与渲染产物不进 git。
+- [x] 文档口径统一：仓库根即工厂根；video-use 不需要 ElevenLabs key（仅 transcribe.py 用，三模板均不转写）；compile_edl 前强制 30fps 工作副本。
 - [ ] sigma-cowboy 落地：cutlist → EDL ranges，爆闪段标注关闭 padding。
-- [ ] wechat-chat-music 迁移为标准模板包并接 EDL（聊天气泡作为动画槽位）。
+- [ ] wechat-chat-music 迁移为标准模板包并接 EDL（聊天气泡作为动画槽位）；顺带把根 `reference/` 的方律师参考视频移入 `templates/wechat-chat-music/reference/`，统一"参考素材放模板包内"的惯例。
 - [ ] 首个项目用 game-commentary 跑通端到端，验证分层。
+
+已知提醒：`codex/add-video-use-submodule` 分支与本分支都添加了同一 submodule（同 commit `92c2b34`），两分支若都要合入 main，`.gitmodules` 会出现一次内容相同的琐碎冲突，任选一边即可。
 
 ## 8. 决策记录与待确认
 

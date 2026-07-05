@@ -1,0 +1,4 @@
+{
+  "_readme": "通用素材索引。每个素材必须登记：id/file/type/tags/emotion/source/license/added。license: user_confirmed | royalty_free | unverified(只能用于内部样片)。目录里不允许出现未登记文件。",
+  "assets": []
+}

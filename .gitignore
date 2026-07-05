@@ -1,0 +1,32 @@
+# ===== 媒体产物不进 git（防止仓库膨胀）=====
+# 项目工作区：只跟踪小文本（planning/、feedback-log.md、edit/edl.json、
+# edit/master.srt），媒体一律忽略
+projects/*/input/
+projects/*/audio/
+projects/*/preview/
+projects/*/output/
+projects/*/variants/
+projects/*/edit/*
+!projects/*/edit/edl.json
+!projects/*/edit/master.srt
+!projects/*/edit/project.md
+
+# 通用素材库：索引进 git，素材本体不进（体积大；按 index.json 的
+# source 字段可重新获取，或团队用网盘/LFS 同步）
+library/memes/*
+library/music/*
+library/sfx/*
+library/fonts/*
+!library/*/.gitkeep
+
+# 模板专有大素材（参考视频已入库的保留；新增大文件按需评估）
+templates/*/assets/*.mp4
+templates/*/assets/*.mov
+templates/*/assets/*.wav
+
+# ===== 运行时垃圾 =====
+node_modules/
+__pycache__/
+*.pyc
+.env
+.DS_Store
