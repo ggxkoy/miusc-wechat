@@ -1,7 +1,13 @@
 # ===== 媒体产物不进 git（防止仓库膨胀）=====
 # 项目工作区：只跟踪小文本（planning/、feedback-log.md、edit/edl.json、
-# edit/master.srt），媒体一律忽略
-projects/*/input/
+# edit/master.srt），媒体一律忽略。
+# 例外（v1 审核教训）：用户提供的文本原文（解说词/台词/拆解）必须入库，
+# 否则"一字不改"无法审计
+projects/*/input/**
+!projects/*/input/**/
+!projects/*/input/**/*.txt
+!projects/*/input/**/*.md
+!projects/*/input/**/*.json
 projects/*/audio/
 projects/*/preview/
 projects/*/output/

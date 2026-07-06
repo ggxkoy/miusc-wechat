@@ -4,13 +4,16 @@ status: DRAFT              # 通过首期验收后改 VERIFIED
 master_spec: { follow_source: true, fps: 30 }  # 画幅跟随广告底片；帧率统一 30fps
 
 pip:                         # 游玩片段画中画
-  position: bottom-right     # 角落位置：bottom-right/bottom-left/top-right/top-left
-  width_ratio: 0.28          # 占画面宽度比例。调大→实机更抢眼
+  # 变更记录：2026-07-05 ep01 v2 飞书反馈"PIP 缩小放左下角，全程循环播放"
+  # → bottom-right/0.28/按标记出现 改为 bottom-left/0.20/全程循环（偏好沉淀）
+  position: bottom-left      # 角落位置：bottom-right/bottom-left/top-right/top-left
+  width_ratio: 0.20          # 占画面宽度比例。调大→实机更抢眼
   margin_px: 36              # 距边缘
   corner_radius: 16
   border: { width: 3, color: "#FFFFFF" }
   label: "实机画面"          # 角标文字，置空则不显示
-  default_on: false          # false=只在 {gameplay:} 标记的句子期间出现
+  default_on: true           # true=全程显示并循环游玩片段；false=只在 {gameplay:} 标记句期间出现
+  loop: true                 # 游玩片段短于成片时循环播放
 
 subtitle:                    # 解说字幕（逐句渲染，随配音出入）
   font_size: 52

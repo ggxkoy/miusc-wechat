@@ -132,8 +132,10 @@ projects/<id>/
 - [x] 文档口径统一：仓库根即工厂根；video-use 不需要 ElevenLabs key（仅 transcribe.py 用，三模板均不转写）；compile_edl 前强制 30fps 工作副本。
 - [ ] sigma-cowboy 落地：cutlist → EDL ranges，爆闪段标注关闭 padding。
 - [x] **素材归属规则定稿（用户裁定）**：非通用素材一律跟随项目——模板包纯文本化（配方），参考视频移入 `projects/tpl-<template_id>/input/reference/`（sigma-cowboy 与方律师视频均已归位，媒体不再进 git，来源登记在 breakdown 可重取；方律师视频为用户手工提供、无来源链接，需用户自行备份，git 历史中仍可找回）。
+- [x] **v1 实跑审核后的四项修正**：①飞书多维表格转正为正式反馈入口（工作流 8.6：读表反馈同权走解析报告协议、禁止绕过参数 ad-hoc 重渲、feedback-log 照写）；②验收粒度配置化（工作流 2.3：stage 打包验收默认、样片首次必做后可跳、粗剪精修合并）；③用户文本强制入库（.gitignore 白名单 txt/md/json）；④偏好回填（game-commentary PIP→左下 20% 全程循环；wechat 视觉→黑底大字卡片逐句出现）。
 - [ ] wechat-chat-music 迁移为标准模板包并接 EDL（聊天气泡作为动画槽位）。
 - [ ] 首个项目用 game-commentary 跑通端到端，验证分层。
+- [ ] v1 审核遗留（低优先）：底片低清策略（<1080p 时询问放大或降级确认）、字幕字号相对画布参数化、双语字幕线立模板包并登记 registry、v1 分支仓库卫生（ffmpeg 二进制/音频出库、模板去重）。
 
 已知提醒：`codex/add-video-use-submodule` 分支与本分支都添加了同一 submodule（同 commit `92c2b34`），两分支若都要合入 main，`.gitmodules` 会出现一次内容相同的琐碎冲突，任选一边即可。
 
