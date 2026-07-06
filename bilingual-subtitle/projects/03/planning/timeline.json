@@ -1,0 +1,66 @@
+[
+  {
+    "idx": 1,
+    "start": 0.3,
+    "end": 3.5,
+    "text": "这到底怎么回事？这女士被感染了吗？",
+    "duration": 3.312,
+    "file": "audio/voice/line_001.mp3"
+  },
+  {
+    "idx": 2,
+    "start": 3.5,
+    "end": 7.0,
+    "text": "整个空间站都被感染了，他们还在试图攻击。",
+    "duration": 3.552,
+    "file": "audio/voice/line_002.mp3"
+  },
+  {
+    "idx": 3,
+    "start": 7.0,
+    "end": 10.5,
+    "text": "除了撤退去救宇航员，不知道还能做什么。",
+    "duration": 3.288,
+    "file": "audio/voice/line_003.mp3"
+  },
+  {
+    "idx": 4,
+    "start": 10.5,
+    "end": 13.5,
+    "text": "但这不容易，病毒传播得太快了。",
+    "duration": 2.784,
+    "file": "audio/voice/line_004.mp3"
+  },
+  {
+    "idx": 5,
+    "start": 13.5,
+    "end": 17.0,
+    "text": "要拯救空间站，需要更多宇航员帮忙。",
+    "duration": 3.144,
+    "file": "audio/voice/line_005.mp3"
+  },
+  {
+    "idx": 6,
+    "start": 17.0,
+    "end": 21.0,
+    "text": "但没一个人还活着。我找到了新武器升级。",
+    "duration": 3.768,
+    "file": "audio/voice/line_006.mp3"
+  },
+  {
+    "idx": 7,
+    "start": 21.0,
+    "end": 25.0,
+    "text": "有了新武器，我们应该能反击打败外星人。",
+    "duration": 3.192,
+    "file": "audio/voice/line_007.mp3"
+  },
+  {
+    "idx": 8,
+    "start": 25.0,
+    "end": 30.0,
+    "text": "这病毒从哪来的没人知道，前一天大家还好好的。",
+    "duration": 3.984,
+    "file": "audio/voice/line_008.mp3"
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "project_id": "sigma-cowboy-ep01",
+  "template": "sigma-cowboy",
+  "created": "2026-07-04",
+  "source_video": {
+    "file": "templates/sigma-cowboy/reference/ref.mp4",
+    "codec": "hevc",
+    "width": 576,
+    "height": 1024,
+    "fps": 30,
+    "duration_s": 29.907,
+    "size_bytes": 3402003
+  },
+  "source_audio": {
+    "file": "projects/sigma-cowboy-ep01/audio/song_APPROVED.m4a",
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 29.907,
+    "size_bytes": 124071
+  },
+  "cutlist": {
+    "file": "templates/sigma-cowboy/reference/cutlist.json",
+    "fps_master": 30,
+    "duration_s": 29.907,
+    "total_cuts": 79,
+    "segments": {
+      "hook": 1,
+      "transform_walk": 5,
+      "wait_sacrifice": 11,
+      "eye_transition": 2,
+      "help_event": 8,
+      "strobe_1": 15,
+      "strobe_2": 12,
+      "strobe_3": 8,
+      "strobe_4_end": 17
+    }
+  },
+  "master_spec": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "footage_required": {
+    "A1_hitchcock_open": "希区柯克式运镜开场 ≥6s",
+    "A2_cheek_earbud": "吸脸颊+戴耳机 ≥4s",
+    "A3_hat_press": "压牛仔帽檐 ≥4s",
+    "A4_sigma_walk": "六亲不认步伐 ≥6s",
+    "A5_wave_leave": "不回头挥手 ≥5s",
+    "A6_end_silhouette": "逆光剪影 ≥5s",
+    "B0_foresight": "预知画面(纸张隧道) ≥4s",
+    "B1_daily_scene": "日常场景(电梯口) ≥8s",
+    "B2_help_moment": "善行事件(暗中按电梯) ≥10s",
+    "B3_cost_detail": "代价(牺牲时间等待) ≥5s",
+    "B4_inner_smile": "转身后憋不住的笑 ≥3s",
+    "C1_dance_01~06": "热舞碎片4~6条 各≥3s",
+    "C2_eye_closeup": "眼睛特写 ≥2s",
+    "D1_bw_frame_pose": "黑白氛围(门框静立) ≥5s"
+  },
+  "status": "P0_complete"
+}

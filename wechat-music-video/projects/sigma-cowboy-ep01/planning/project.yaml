@@ -1,0 +1,36 @@
+template_id: sigma-cowboy
+project_id: sigma-cowboy-ep01
+title: 西格玛牛仔 第一集
+created: 2026-07-04
+
+master_spec:
+  width: 1080
+  height: 1920
+  fps: 30
+  duration_s: 29.907  # BGM 固定
+
+source:
+  reference_video: templates/sigma-cowboy/reference/ref.mp4
+  cutlist: templates/sigma-cowboy/reference/cutlist.json
+  audio: audio/song_APPROVED.m4a  # 从 ref.mp4 提取的原声
+
+# 本集叙事槽位（首集=参考视频本集内容）
+slots:
+  daily_scene: 电梯口等待
+  foresight_visual: 纸张隧道
+  good_deed: 暗中按住电梯帮赶时间的小男孩
+  helped_person: 赶时间的小男孩
+  cost: 牺牲自己的一顿饭时间等待
+  dance_style: freestyle
+
+timeline_mode: transplant  # 1:1 移植 cutlist.json
+
+channels:
+  - tiktok    # 母版
+  - douyin
+  - kuaishou
+  - xiaohongshu
+  - wechat_channels
+  - bilibili
+
+status: P0_complete

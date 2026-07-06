@@ -1,29 +1,60 @@
-# Node
-node_modules/
+# Video and media files (too large for git)
+*.mp4
+*.m4a
+*.mp3
+*.wav
+*.aac
+
+# But keep scripts and configs
+!bin/
+
+# Preview frames (images) - keep small ones, ignore large batches
+bilingual-subtitle/projects/*/input/
+bilingual-subtitle/projects/*/preview/
+bilingual-subtitle/projects/*/output/*.mp4
+bilingual-subtitle/projects/*/output/*.png
+bilingual-subtitle/projects/*/audio/voice/
+bilingual-subtitle/projects/*/audio/*.m4a
+
+wechat-music-video/projects/*/input/
+wechat-music-video/projects/*/output/*.mp4
+wechat-music-video/projects/*/output/*.png
+wechat-music-video/projects/*/audio/voice/
+wechat-music-video/projects/*/audio/*.m4a
+wechat-music-video/projects/*/input/gameplay/
+
+# OS files
+.DS_Store
+*.pyc
+__pycache__/
+
+# Temp files
+/tmp/
+*.tmp
+
+# Embedded git repos
+wechat-dialog-generator/
+wx_channels_download/
 
 # OpenClaw internal
 .openclaw/
 
-# OS
-.DS_Store
-
-# Large binaries / temp
-bin/
-*.zip
-
-# Large media files (use Git LFS or external storage if needed)
-*.wav
-*.mp4
-
-# Logs
+# Misc temp files
 clone.log
-*.log
-
-# Workspace screenshots
 desktop-snapshot.png
+voice_jarvis.py
 
-# wx_channels_download (separate project)
+# FFmpeg binaries (too large for git)
+bin/ffmpeg
+bin/ffprobe
+
+# Preview frames
+bilingual-subtitle/projects/*/preview/
+wechat-music-video/projects/*/preview/
+
+# wx channels download binary
 wx_channels_download/
 
-# wechat-dialog-generator (separate project)
-wechat-dialog-generator/
+# Node modules
+node_modules/
+wechat-music-video/remotion/node_modules/

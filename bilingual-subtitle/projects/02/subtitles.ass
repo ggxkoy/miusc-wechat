@@ -1,0 +1,23 @@
+[Script Info]
+Title: Bilingual Subtitles
+ScriptType: v4.00+
+PlayResX: 360
+PlayResY: 640
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Italic, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: CN,Arial,22,&H00FFFFFF,&H000000FF,&H80000000,1,0,1,2,0,2,10,10,95,1
+Style: EN,Arial,18,&H00FFFFFF,&H000000FF,&H80000000,1,0,1,2,0,2,10,10,20,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00,300,0:00:03,500,CN,,0,0,0,,来吧
+Dialogue: 0,0:00:00,300,0:00:03,500,EN,,0,0,0,,Come on
+Dialogue: 0,0:00:03,799,0:00:06,500,CN,,0,0,0,,离我远点
+Dialogue: 0,0:00:03,799,0:00:06,500,EN,,0,0,0,,Stay away from me
+Dialogue: 0,0:00:06,799,0:00:16,199,CN,,0,0,0,,该升级了
+Dialogue: 0,0:00:06,799,0:00:16,199,EN,,0,0,0,,Time for an upgrade.
+Dialogue: 0,0:00:16,500,0:00:24,199,CN,,0,0,0,,太恶心了
+Dialogue: 0,0:00:16,500,0:00:24,199,EN,,0,0,0,,This is so gross.
+Dialogue: 0,0:00:24,500,0:00:26,399,CN,,0,0,0,,呵呵，我挺享受的
+Dialogue: 0,0:00:24,500,0:00:26,399,EN,,0,0,0,,Ho ho I'm enjoying this

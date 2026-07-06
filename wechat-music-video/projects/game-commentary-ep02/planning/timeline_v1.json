@@ -1,0 +1,122 @@
+[
+  {
+    "idx": 1,
+    "text": "Palmon Survival这个游戏你刷到过吗",
+    "locked_start": 1,
+    "gameplay": "clip01.mp4",
+    "duration": 3.264,
+    "file": "audio/voice/line_001.mp3",
+    "start": 1,
+    "end": 4.263999999999999
+  },
+  {
+    "idx": 2,
+    "text": "开局一把斧头，砍树收集木头",
+    "locked_start": 5,
+    "gameplay": null,
+    "duration": 3.456,
+    "file": "audio/voice/line_002.mp3",
+    "start": 5,
+    "end": 8.456
+  },
+  {
+    "idx": 3,
+    "text": "搬到商店卖钱，金币越多越上头",
+    "locked_start": 9,
+    "gameplay": null,
+    "duration": 3.408,
+    "file": "audio/voice/line_003.mp3",
+    "start": 9,
+    "end": 12.408
+  },
+  {
+    "idx": 4,
+    "text": "买装备升级，角色直接变强",
+    "locked_start": 13,
+    "gameplay": null,
+    "duration": 3.264,
+    "file": "audio/voice/line_004.mp3",
+    "start": 13,
+    "end": 16.264
+  },
+  {
+    "idx": 5,
+    "text": "出门遇到怪物，弓箭手远程输出",
+    "locked_start": 17,
+    "gameplay": null,
+    "duration": 3.264,
+    "file": "audio/voice/line_005.mp3",
+    "start": 17,
+    "end": 20.264
+  },
+  {
+    "idx": 6,
+    "text": "LV8的Boss你敢信，等级碾压直接秒",
+    "locked_start": 21,
+    "gameplay": null,
+    "duration": 4.008,
+    "file": "audio/voice/line_006.mp3",
+    "start": 21,
+    "end": 25.008
+  },
+  {
+    "idx": 7,
+    "text": "打不过就回家建基地",
+    "locked_start": 25,
+    "gameplay": null,
+    "duration": 2.352,
+    "file": "audio/voice/line_007.mp3",
+    "start": 25,
+    "end": 27.352
+  },
+  {
+    "idx": 8,
+    "text": "围墙、炮塔、农场全安排上",
+    "locked_start": 29,
+    "gameplay": null,
+    "duration": 3.312,
+    "file": "audio/voice/line_008.mp3",
+    "start": 29,
+    "end": 32.312
+  },
+  {
+    "idx": 9,
+    "text": "宠物也帮你打架，熊和大黑怪一起上",
+    "locked_start": 33,
+    "gameplay": null,
+    "duration": 3.6,
+    "file": "audio/voice/line_009.mp3",
+    "start": 33,
+    "end": 36.6
+  },
+  {
+    "idx": 10,
+    "text": "怪物一波波来袭，LV6都扛不住你的防线",
+    "locked_start": 37,
+    "gameplay": null,
+    "duration": 4.08,
+    "file": "audio/voice/line_010.mp3",
+    "start": 37,
+    "end": 41.08
+  },
+  {
+    "idx": 11,
+    "text": "建设保卫家园，这就是Palmon Survival",
+    "locked_start": 41,
+    "gameplay": null,
+    "duration": 3.912,
+    "file": "audio/voice/line_011.mp3",
+    "start": 41,
+    "end": 44.912
+  },
+  {
+    "idx": 12,
+    "text": "简单到上头，停不下来",
+    "locked_start": 45,
+    "gameplay": null,
+    "duration": 2.568,
+    "file": "audio/voice/line_012.mp3",
+    "start": 45,
+    "end": 47.568
+  }
+]

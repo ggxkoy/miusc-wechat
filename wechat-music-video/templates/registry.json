@@ -1,0 +1,28 @@
+{
+  "templates": [
+    {
+      "id": "wechat-chat-music",
+      "name": "微信聊天音乐短视频",
+      "type": "graphic",
+      "status": "VERIFIED",
+      "spec": "OPENCLAW_WECHAT_MUSIC_VIDEO_WORKFLOW.md",
+      "note": "第一个模板，规范在独立文档中，待迁移为标准模板包"
+    },
+    {
+      "id": "sigma-cowboy",
+      "name": "西格玛牛仔",
+      "type": "narrative-footage",
+      "status": "DRAFT",
+      "spec": "templates/sigma-cowboy/",
+      "note": "叙事模板：真人实拍 + 时间轴1:1移植（BGM固定）；待首集T4复刻验证"
+    },
+    {
+      "id": "game-commentary",
+      "name": "游戏解说",
+      "type": "structural",
+      "status": "DRAFT",
+      "spec": "templates/game-commentary/",
+      "note": "结构模板：广告底片每期更换 + 实机画中画 + TTS配音字幕；待首期验收"
+    }
+  ]
+}

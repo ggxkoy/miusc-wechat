@@ -1,0 +1,403 @@
+{
+ "source": "reference/ref.mp4",
+ "fps_master": 30,
+ "duration_s": 29.907,
+ "note": "scene threshold 0.25; cut=新镜头起点; frame=round(t*30); 版权归用户所有,原音乐与时间轴可直接移植; 段落语义: hook=化身钩子 transform_walk=化身+步伐 wait_sacrifice=牺牲时间等待(含8s预知画面) eye_transition=转场 help_event=小男孩赶电梯+暗中相助+事后微笑 strobe_*=片尾热舞混剪 hold_*=喘息",
+ "cuts": [
+  {
+   "t": 1.933,
+   "frame": 58,
+   "segment": "hook"
+  },
+  {
+   "t": 1.967,
+   "frame": 59,
+   "segment": "transform_walk"
+  },
+  {
+   "t": 2.5,
+   "frame": 75,
+   "segment": "transform_walk"
+  },
+  {
+   "t": 3.2,
+   "frame": 96,
+   "segment": "transform_walk"
+  },
+  {
+   "t": 4.167,
+   "frame": 125,
+   "segment": "transform_walk"
+  },
+  {
+   "t": 4.6,
+   "frame": 138,
+   "segment": "transform_walk"
+  },
+  {
+   "t": 6.4,
+   "frame": 192,
+   "segment": "wait_sacrifice"
+  },
+  {
+   "t": 6.933,
+   "frame": 208,
+   "segment": "wait_sacrifice"
+  },
+  {
+   "t": 7.633,
+   "frame": 229,
+   "segment": "wait_sacrifice"
+  },
+  {
+   "t": 7.833,
+   "frame": 235,
+   "segment": "wait_sacrifice"
+  },
+  {
+   "t": 8.0,
+   "frame": 240,
+   "segment": "wait_sacrifice"
+  },
+  {
+   "t": 8.033,
+   "frame": 241,
+   "segment": "wait_sacrifice"
+  },
+  {
+   "t": 9.9,
+   "frame": 297,
+   "segment": "wait_sacrifice"
+  },
+  {
+   "t": 10.7,
+   "frame": 321,
+   "segment": "wait_sacrifice"
+  },
+  {
+   "t": 11.2,
+   "frame": 336,
+   "segment": "wait_sacrifice"
+  },
+  {
+   "t": 12.0,
+   "frame": 360,
+   "segment": "wait_sacrifice"
+  },
+  {
+   "t": 13.767,
+   "frame": 413,
+   "segment": "wait_sacrifice"
+  },
+  {
+   "t": 14.0,
+   "frame": 420,
+   "segment": "eye_transition"
+  },
+  {
+   "t": 14.033,
+   "frame": 421,
+   "segment": "eye_transition"
+  },
+  {
+   "t": 14.867,
+   "frame": 446,
+   "segment": "help_event"
+  },
+  {
+   "t": 15.667,
+   "frame": 470,
+   "segment": "help_event"
+  },
+  {
+   "t": 16.9,
+   "frame": 507,
+   "segment": "help_event"
+  },
+  {
+   "t": 18.2,
+   "frame": 546,
+   "segment": "help_event"
+  },
+  {
+   "t": 18.933,
+   "frame": 568,
+   "segment": "help_event"
+  },
+  {
+   "t": 19.433,
+   "frame": 583,
+   "segment": "help_event"
+  },
+  {
+   "t": 21.2,
+   "frame": 636,
+   "segment": "help_event"
+  },
+  {
+   "t": 22.267,
+   "frame": 668,
+   "segment": "help_event"
+  },
+  {
+   "t": 23.667,
+   "frame": 710,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 23.767,
+   "frame": 713,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 23.8,
+   "frame": 714,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 23.833,
+   "frame": 715,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 23.867,
+   "frame": 716,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 23.9,
+   "frame": 717,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 23.933,
+   "frame": 718,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 24.0,
+   "frame": 720,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 24.033,
+   "frame": 721,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 24.133,
+   "frame": 724,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 25.067,
+   "frame": 752,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 25.133,
+   "frame": 754,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 25.233,
+   "frame": 757,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 25.267,
+   "frame": 758,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 25.333,
+   "frame": 760,
+   "segment": "strobe_1"
+  },
+  {
+   "t": 25.367,
+   "frame": 761,
+   "segment": "strobe_2"
+  },
+  {
+   "t": 25.4,
+   "frame": 762,
+   "segment": "strobe_2"
+  },
+  {
+   "t": 25.467,
+   "frame": 764,
+   "segment": "strobe_2"
+  },
+  {
+   "t": 25.5,
+   "frame": 765,
+   "segment": "strobe_2"
+  },
+  {
+   "t": 25.6,
+   "frame": 768,
+   "segment": "strobe_2"
+  },
+  {
+   "t": 25.633,
+   "frame": 769,
+   "segment": "strobe_2"
+  },
+  {
+   "t": 25.667,
+   "frame": 770,
+   "segment": "strobe_2"
+  },
+  {
+   "t": 25.733,
+   "frame": 772,
+   "segment": "strobe_2"
+  },
+  {
+   "t": 25.833,
+   "frame": 775,
+   "segment": "strobe_2"
+  },
+  {
+   "t": 25.9,
+   "frame": 777,
+   "segment": "strobe_2"
+  },
+  {
+   "t": 25.967,
+   "frame": 779,
+   "segment": "strobe_2"
+  },
+  {
+   "t": 26.0,
+   "frame": 780,
+   "segment": "strobe_2"
+  },
+  {
+   "t": 27.4,
+   "frame": 822,
+   "segment": "strobe_3"
+  },
+  {
+   "t": 27.5,
+   "frame": 825,
+   "segment": "strobe_3"
+  },
+  {
+   "t": 27.533,
+   "frame": 826,
+   "segment": "strobe_3"
+  },
+  {
+   "t": 27.6,
+   "frame": 828,
+   "segment": "strobe_3"
+  },
+  {
+   "t": 27.633,
+   "frame": 829,
+   "segment": "strobe_3"
+  },
+  {
+   "t": 27.667,
+   "frame": 830,
+   "segment": "strobe_3"
+  },
+  {
+   "t": 27.733,
+   "frame": 832,
+   "segment": "strobe_3"
+  },
+  {
+   "t": 27.767,
+   "frame": 833,
+   "segment": "strobe_3"
+  },
+  {
+   "t": 28.633,
+   "frame": 859,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 28.7,
+   "frame": 861,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 28.8,
+   "frame": 864,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 28.833,
+   "frame": 865,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 28.9,
+   "frame": 867,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 28.933,
+   "frame": 868,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 28.967,
+   "frame": 869,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 29.033,
+   "frame": 871,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 29.067,
+   "frame": 872,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 29.167,
+   "frame": 875,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 29.2,
+   "frame": 876,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 29.233,
+   "frame": 877,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 29.3,
+   "frame": 879,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 29.4,
+   "frame": 882,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 29.467,
+   "frame": 884,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 29.533,
+   "frame": 886,
+   "segment": "strobe_4_end"
+  },
+  {
+   "t": 29.567,
+   "frame": 887,
+   "segment": "strobe_4_end"
+  }
+ ]
+}

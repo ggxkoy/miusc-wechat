@@ -1,0 +1,132 @@
+[
+  {
+    "idx": 1,
+    "text": "LumberCat这个游戏你刷到过吗，",
+    "locked_start": 1,
+    "gameplay": "clip01.mp4",
+    "file": "audio/voice/line_001.mp3",
+    "duration": 2.976,
+    "start": 1,
+    "end": 3.976
+  },
+  {
+    "idx": 2,
+    "text": "猫咪伐木工砍木头堆金字塔",
+    "locked_start": null,
+    "gameplay": "clip01.mp4",
+    "file": "audio/voice/line_002.mp3",
+    "duration": 3.0,
+    "start": 4.376,
+    "end": 7.376
+  },
+  {
+    "idx": 3,
+    "text": "越堆越高，",
+    "locked_start": 6,
+    "gameplay": null,
+    "file": "audio/voice/line_003.mp3",
+    "duration": 1.56,
+    "start": 6,
+    "end": 7.56
+  },
+  {
+    "idx": 4,
+    "text": "强迫症极度舒适",
+    "locked_start": null,
+    "gameplay": null,
+    "file": "audio/voice/line_004.mp3",
+    "duration": 2.136,
+    "start": 7.96,
+    "end": 10.096
+  },
+  {
+    "idx": 5,
+    "text": "三只猫疯狂砍，",
+    "locked_start": 10,
+    "gameplay": null,
+    "file": "audio/voice/line_005.mp3",
+    "duration": 1.944,
+    "start": 10,
+    "end": 11.944
+  },
+  {
+    "idx": 6,
+    "text": "金字塔直接塌了",
+    "locked_start": null,
+    "gameplay": null,
+    "file": "audio/voice/line_006.mp3",
+    "duration": 1.992,
+    "start": 12.344,
+    "end": 14.336
+  },
+  {
+    "idx": 7,
+    "text": "木头哗啦啦往下倒",
+    "locked_start": 14,
+    "gameplay": "clip01.mp4",
+    "file": "audio/voice/line_007.mp3",
+    "duration": 2.088,
+    "start": 14,
+    "end": 16.088
+  },
+  {
+    "idx": 8,
+    "text": "装车拉去卖钱，",
+    "locked_start": 18,
+    "gameplay": null,
+    "file": "audio/voice/line_008.mp3",
+    "duration": 1.944,
+    "start": 18,
+    "end": 19.944
+  },
+  {
+    "idx": 9,
+    "text": "越赚越多",
+    "locked_start": null,
+    "gameplay": null,
+    "file": "audio/voice/line_009.mp3",
+    "duration": 1.584,
+    "start": 20.344,
+    "end": 21.928
+  },
+  {
+    "idx": 10,
+    "text": "升级装备效率翻倍，",
+    "locked_start": 22,
+    "gameplay": null,
+    "file": "audio/voice/line_010.mp3",
+    "duration": 2.184,
+    "start": 22,
+    "end": 24.184
+  },
+  {
+    "idx": 11,
+    "text": "砍木头堆木头卖木头",
+    "locked_start": null,
+    "gameplay": null,
+    "file": "audio/voice/line_011.mp3",
+    "duration": 2.592,
+    "start": 24.584,
+    "end": 27.176
+  },
+  {
+    "idx": 12,
+    "text": "简单到上头，",
+    "locked_start": 26,
+    "gameplay": null,
+    "file": "audio/voice/line_012.mp3",
+    "duration": 1.704,
+    "start": 26,
+    "end": 27.704
+  },
+  {
+    "idx": 13,
+    "text": "停不下来",
+    "locked_start": null,
+    "gameplay": null,
+    "file": "audio/voice/line_013.mp3",
+    "duration": 1.44,
+    "start": 28.104,
+    "end": 29.544
+  }
+]

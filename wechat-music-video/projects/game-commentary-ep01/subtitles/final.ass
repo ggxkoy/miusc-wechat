@@ -1,0 +1,25 @@
+[Script Info]
+Title: LumberCat Commentary
+ScriptType: v4.00+
+PlayResX: 360
+PlayResY: 640
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Italic, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,18,&H00FFFFFF,&H00000000,&H80000000,0,0,1,2,0,2,10,10,40,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:01.00,0:00:03.97,Default,,0,0,0,,LumberCat这个游戏你刷到过吗，
+Dialogue: 0,0:00:04.37,0:00:07.37,Default,,0,0,0,,猫咪伐木工砍木头堆金字塔
+Dialogue: 0,0:00:07.50,0:00:09.06,Default,,0,0,0,,越堆越高，
+Dialogue: 0,0:00:09.46,0:00:11.59,Default,,0,0,0,,强迫症极度舒适
+Dialogue: 0,0:00:10.50,0:00:12.44,Default,,0,0,0,,三只猫疯狂砍，
+Dialogue: 0,0:00:12.84,0:00:14.83,Default,,0,0,0,,金字塔直接塌了
+Dialogue: 0,0:00:14.50,0:00:16.58,Default,,0,0,0,,木头哗啦啦往下倒
+Dialogue: 0,0:00:18.00,0:00:19.94,Default,,0,0,0,,装车拉去卖钱，
+Dialogue: 0,0:00:20.34,0:00:21.92,Default,,0,0,0,,越赚越多
+Dialogue: 0,0:00:22.00,0:00:24.18,Default,,0,0,0,,升级装备效率翻倍，
+Dialogue: 0,0:00:24.58,0:00:27.17,Default,,0,0,0,,砍木头堆木头卖木头
+Dialogue: 0,0:00:27.50,0:00:29.20,Default,,0,0,0,,简单到上头，
+Dialogue: 0,0:00:29.60,0:00:31.04,Default,,0,0,0,,停不下来

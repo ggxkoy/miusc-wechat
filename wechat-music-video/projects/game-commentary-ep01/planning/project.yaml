@@ -1,0 +1,55 @@
+template_id: game-commentary
+project_id: game-commentary-ep01
+title: LumberCat 游戏解说 第一期
+created: 2026-07-05
+
+master_spec:
+  follow_source: true   # 画幅跟随广告底片
+  width: 360            # 跟随 ad_source.mp4（竖屏）
+  height: 640
+  fps: 30
+
+source:
+  ad_video: input/ad_source.mp4
+  ad_video_30fps: input/ad_30fps.mp4
+  ad_audio: audio/ad_original.m4a
+  ad_info: input/ad_source.info.json
+  script: input/script.txt
+  ad_url: https://www.youtube.com/shorts/1tI9rdR-tUQ
+  ad_title: "LumberCat: Tree Pyramid vs 3 Cats #viralshort #lumbercat"
+  ad_uploader: Beyond The Now
+  ad_duration_s: 30.336
+
+# 解说词解析
+script_parsed:
+  total_sentences: 21
+  time_locked: 5  # [00:01], [00:06], [00:10], [00:14], [00:18], [00:22], [00:26]
+  gameplay_marked: 4  # {gameplay:off} ×4
+  gameplay_clip_marked: 0  # 没有指定具体 gameplay 片段（无实机画面）
+  conflicts: []
+
+# 本期无游玩片段（纯解说广告视频）
+# pip 不出现（无 gameplay 片段标注具体文件）
+
+pip:
+  position: bottom-right
+  width_ratio: 0.28
+  margin_px: 36
+  default_on: false  # 无 gameplay 标记 → 不显示
+
+tts:
+  engine: edge-tts
+  voice: zh-CN-YunxiNeural  # 待 P1 选定后回填
+  rate: "+0%"
+  pitch: "+0Hz"
+  gap_s: 0.5
+
+audio_mix:
+  duck_db: -12
+  duck_attack_ms: 200
+  voice_gain_db: 0
+  master_lufs: -14
+
+authorization: pending  # 待用户确认
+
+status: P0_complete

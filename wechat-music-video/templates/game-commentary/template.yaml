@@ -1,0 +1,35 @@
+template_id: game-commentary
+name: 游戏解说（广告底片 + 实机画中画 + 中文配音字幕）
+status: DRAFT              # 通过首期验收后改 VERIFIED
+master_spec: { follow_source: true, fps: 30 }  # 画幅跟随广告底片；帧率统一 30fps
+
+pip:                         # 游玩片段画中画
+  position: bottom-right     # 角落位置：bottom-right/bottom-left/top-right/top-left
+  width_ratio: 0.28          # 占画面宽度比例。调大→实机更抢眼
+  margin_px: 36              # 距边缘
+  corner_radius: 16
+  border: { width: 3, color: "#FFFFFF" }
+  label: "实机画面"          # 角标文字，置空则不显示
+  default_on: false          # false=只在 {gameplay:} 标记的句子期间出现
+
+subtitle:                    # 解说字幕（逐句渲染，随配音出入）
+  font_size: 52
+  position: bottom-center    # 自动避开 pip 所在角
+  max_chars_per_line: 18     # 超长自动折行
+  style: { color: "#FFFFFF", stroke: "#000000", stroke_width: 3 }
+  fade_out_delay_s: 0.3      # 配音结束后字幕停留
+
+tts:
+  engine: edge-tts           # edge-tts/minimax/azure/cosyvoice（见 breakdown.md 选型表）
+  voice: zh-CN-YunxiNeural   # P1 节点用户从 2~3 个候选小样中选定后回填
+  rate: "+0%"                # 语速。解说密集时可 +10%
+  pitch: "+0Hz"
+  gap_s: 0.5                 # 未标时间的句子与上一句的默认间隔
+
+audio_mix:
+  duck_db: -12               # 解说时广告原声压低量。调大→人声更突出
+  duck_attack_ms: 200        # 闪避进入/恢复的平滑时长
+  voice_gain_db: 0
+  master_lufs: -14
+
+debug_stamp: false           # REVIEW 产物渲染时置 true（烧录帧号|秒数）

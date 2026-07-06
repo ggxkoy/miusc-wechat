@@ -1,0 +1,29 @@
+[Script Info]
+Title: Bilingual Subtitles
+ScriptType: v4.00+
+PlayResX: 360
+PlayResY: 640
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Italic, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: CN,Arial,22,&H00FFFFFF,&H00000000,&H80000000,0,0,1,2,0,8,10,10,60,1
+Style: EN,Arial,18,&H00FFFFFF,&H00000000,&H80000000,0,0,1,2,0,2,10,10,20,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00,000,0:00:05,000,CN,,0,0,0,,让我用这个洞来收集尽可能多的木头
+Dialogue: 0,0:00:00,000,0:00:05,000,EN,,0,0,0,,Let me use this hole right here to collect as many logs as I can.
+Dialogue: 0,0:00:05,000,0:00:11,000,CN,,0,0,0,,之后我们就能把洞升级到下一级，但在此之前，再多放一些进去
+Dialogue: 0,0:00:05,000,0:00:11,000,EN,,0,0,0,,After that, we will be able to upgrade our hole to the next level, but to do that, let me get some more inside.
+Dialogue: 0,0:00:11,000,0:00:13,000,CN,,0,0,0,,我觉得我们进展得挺顺利的
+Dialogue: 0,0:00:11,000,0:00:13,000,EN,,0,0,0,,I think we are doing really good.
+Dialogue: 0,0:00:13,000,0:00:15,500,CN,,0,0,0,,这些木头都要运到我们的公司去
+Dialogue: 0,0:00:13,000,0:00:15,500,EN,,0,0,0,,All of these logs are going to our company.
+Dialogue: 0,0:00:15,500,0:00:18,500,CN,,0,0,0,,收集完木头后，就该去公司帮忙了
+Dialogue: 0,0:00:15,500,0:00:18,500,EN,,0,0,0,,So, after collecting as many logs as we can, it's time to move to the company and help them.
+Dialogue: 0,0:00:18,500,0:00:25,000,CN,,0,0,0,,首先要去掉树皮，然后把木头加工成优质木板
+Dialogue: 0,0:00:18,500,0:00:25,000,EN,,0,0,0,,First thing first, we have to remove the bark from the trees and we will be able to turn those logs into really good planks.
+Dialogue: 0,0:00:25,000,0:00:30,500,CN,,0,0,0,,现在把木板装上卡车，最后送给外面等候的猫咪们
+Dialogue: 0,0:00:25,000,0:00:30,500,EN,,0,0,0,,Now, we can load all of those planks into our truck and finally, we will be able to deliver them to the cats waiting outside.
+Dialogue: 0,0:00:30,500,0:00:35,000,CN,,0,0,0,,这样我们就能赚到升级公司所需的全部资金
+Dialogue: 0,0:00:30,500,0:00:35,000,EN,,0,0,0,,That's how we are going to make all the money we need to upgrade our company to the next level.
