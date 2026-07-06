@@ -46,6 +46,15 @@ Add whatever helps you do your job. This is your cheat sheet.
 - 系统没装 brew；这两个是从 npmmirror 镜像下的静态包，已去 quarantine、可直接执行。
 - 用法：`/Users/lyq/.openclaw/workspace/bin/ffmpeg ...` 或先 `export PATH="/Users/lyq/.openclaw/workspace/bin:$PATH"`
 
+## GitHub SSH
+
+- GitHub account: `ggxkoy`
+- SSH host: `git@github.com`, using the existing user key `~/.ssh/id_ed25519` via `~/.ssh/config`.
+- Main workspace remote: `git@github.com:ggxkoy/miusc-wechat.git`.
+- Use native `git fetch`, `git pull`, and `git push`; do not request or embed a Personal Access Token.
+- For a new GitHub repository, prefer an SSH remote in the form `git@github.com:OWNER/REPO.git`.
+- Never print, copy, upload, or commit the private key. Only the public key is registered with GitHub.
+
 ## 微信聊天短视频工作流 (OPENCLAW_WECHAT_MUSIC_VIDEO_WORKFLOW)
 
 - 工作流文档：用户 2026-07-01 提供，2026-07-02 又给了优化版 GitHub 分支 `ggxkoy/miusc-wechat@claude/openclaw-video-workflow-ubjhn6`；已保存到当前项目：`/Users/lyq/.openclaw/workspace/wechat-music-video/OPENCLAW_WECHAT_MUSIC_VIDEO_WORKFLOW.md`。
